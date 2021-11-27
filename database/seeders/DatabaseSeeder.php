@@ -15,192 +15,296 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // Default Courses
-        DB::table('courses')->insert(array(
+        DB::table('office')->insert(array(
             array(
-                'course_id' => 'CITC-BSIT',
-                'course_name' => 'Information Technology'
+                'name' => 'Admission and Scholarship Office',
+                'building_num' => '3',
+                'status' => 'offline', 
             ),
+
             array(
-                'course_id' => 'CITC-BSTCM',
-                'course_name' => 'Technology Communication Management'
+                'name' => 'Office of the Student Affairs',
+                'building_num' => '3',
+                'status' => 'offline', 
             ),
+
+            array( 
+                'name' => 'Department of Mathematics Education',
+                'building_num' => '3',
+                'status' => 'offline', 
+            ),
+
             array(
-                'course_id' => 'CITC-BSCPE',
-                'course_name' => 'Computer Engineering'
+                'name' => 'Department of Science Education',
+                'building_num' => '3',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'College of Science and Technology Education',
+                'building_num' => '3',
+                'status' => 'offline', 
+            ),
+            array( 
+                'name' => 'Department of Education, Planning and Management',
+                'building_num' => '3',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Department of Public/Administration',
+                'building_num' => '3',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Department of Teaching Languages',
+                'building_num' => '3',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'USTP ROTC',
+                'building_num' => '4',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Mindanao University of Science and Technology Employees Multipurpose Cooperative',
+                'building_num' => '5',
+                'status' => 'offline', 
+            ),
+
+            array( 
+                'name' => 'Office of the Alumni Federation',
+                'building_num' => '5',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'JIECEP',
+                'building_num' => '5',
+                'status' => 'offline', 
+            ),
+
+            array( 
+                'name' => 'Civil and Sanitary Work Section',
+                'building_num' => '5',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Career Center and Industrial Relations Office',
+                'building_num' => '9',
+                'status' => 'offline', 
+            ),
+
+            array( 
+                'name' => 'IPFDO',
+                'building_num' => '9',
+                'status' => 'offline', 
+            ),
+
+
+            array(
+                'name' => 'Office of the Dean (CITC) ',
+                'building_num' => '9',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Digital Transformation',
+                'building_num' => '9',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Document Tracking System Consultation Meeting and Simulation',
+                'building_num' => '9',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'E-Display Center',
+                'building_num' => '14',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Assessment',
+                'building_num' => '14',
+                'status' => 'offline', 
+            ),
+
+
+            array(
+                'name' => 'Cashering',
+                'building_num' => '14',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Commission on Audit',
+                'building_num' => '14',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'NSTP',
+                'building_num' => '19',
+                'status' => 'offline', 
+            ),
+
+            array( 
+                'name' => 'IEP-Office',
+                'building_num' => '23',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Office of the Registrar',
+                'building_num' => '23',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Department of Technology Communication Management',
+                'building_num' => '23',
+                'status' => 'offline', 
+            ),
+
+            array(  
+                'name' => 'Communication Arts Languages and Literature',
+                'building_num' => '23',
+                'status' => 'offline', 
+            ),
+            array(  
+                'name' => 'Office of the Mechanical & Electrical Works Unit',
+                'building_num' => '23',
+                'status' => 'offline', 
+            ),
+
+            array( 
+                'name' => 'Extension Services Office',
+                'building_num' => '24',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'CSTE',
+                'building_num' => '24',
+                'status' => 'offline', 
+            ),
+
+            array(  
+                'name' => 'CAS Accreditation Center',
+                'building_num' => '41',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Office of the Social Sciences',
+                'building_num' => '41',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Clinic',
+                'building_num' => '41',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Department of EST and FST',
+                'building_num' => '41',
+                'status' => 'offline', 
+            ),
+
+            array( 
+                'name' => 'Office of the Research Director',
+                'building_num' => '42',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Research Office',
+                'building_num' => '42',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Office of the Dean',
+                'building_num' => '43',
+                'status' => 'offline', 
+            ),
+
+            array( 
+                'name' => 'Extension Community Relation Division',
+                'building_num' => '43',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Faculty Office: Electrical Engineering Department',
+                'building_num' => '43',
+                'status' => 'offline', 
+            ),
+
+            array( 
+                'name' => 'Computer Engineering Faculty Office',
+                'building_num' => '43',
+                'status' => 'offline', 
+            ),
+
+            array(
+                'name' => 'Director for Publication',
+                'building_num' => '43',
+                'status' => 'offline', 
+            ),
+
+            array( 
+                'name' => 'Office of the School Administration Villanueva Campus',
+                'building_num' => '43',
+                'status' => 'offline', 
+            ),
+
+        ));
+
+        $init = "ADMIN";
+        $year = substr(date("Y"), -2);
+        $date_time_spec = date("m"."d"."h"."i"."s");
+            
+        $id = $init.$year.$date_time_spec;
+
+        DB::table('admin')->insert(array(
+            array(
+                'id' => $id,
+                'name' => 'John T. Riley',
             ),
         ));
 
-        // Default Teacher
-        DB::table('teachers')->insert(
+        // admin
+        DB::table('user')->insert(array(
             array(
-                'teacher_id' => '2005204365',
-                'teacher_name' => 'Maria de la Rosa'
-            ),
-        );
-
-        // Default Roles
-        DB::table('roles')->insert(array(
-            array(
-                'role_name' => 'moderator'
-            ),
-            array(
-                'role_name' => 'member'
-            ),
-        ));
-
-        // Default Organization
-        DB::table('organizations')->insert(
-            array(
-                'org_id' => 'USTPCITC01',
-                'org_name' => 'SITE - Society of Information Technology Enthusiasts',
-                'org_fee' => '200'
-            ),
-        );
-
-        // Default Students
-        DB::table('students')->insert(array(
-            array(
-                'student_id' => '2019236542',
-                'student_name' => 'Josephine B. Mapalag',
-                'student_year' => '2nd Year',
-                'student_gender' => 'Female',
-                'student_contact' => '09345782913',
-                'student_email' => 'josephinB@gmail.com',
-                'course_id' => 'CITC-BSIT',
-                'org_id' => 'USTPCITC01'
-            ),
-            array(
-                'student_id' => '2018108756',
-                'student_name' => 'Mariano Jose A. Bagunoy',
-                'student_year' => '3rd Year',
-                'student_gender' => 'Male',
-                'student_contact' => '09175689215',
-                'student_email' => 'MJ.Bagz@gmail.com',
-                'course_id' => 'CITC-BSCPE',
-                'org_id' => 'USTPCITC01'
-            ),
-            array(
-                'student_id' => '2020176549',
-                'student_name' => 'Ryan Martin V. Amihan',
-                'student_year' => '1st Year',
-                'student_gender' => 'Male',
-                'student_contact' => '09269874631',
-                'student_email' => 'rymartamihan@gmail.com',
-                'course_id' => 'CITC-BSIT',
-                'org_id' => 'USTPCITC01'
-            ),
-            array(
-                'student_id' => '2019103456',
-                'student_name' => 'Flora Donna S. Verdante',
-                'student_year' => '2nd Year',
-                'student_gender' => 'Female',
-                'student_contact' => '09348759643',
-                'student_email' => 'floradonna34@gmail.com',
-                'course_id' => 'CITC-BSTCM',
-                'org_id' => 'USTPCITC01'
-            ),
-            array(
-                'student_id' => '2020107564',
-                'student_name' => 'Ailee R. Su',
-                'student_year' => '1st Year',
-                'student_gender' => 'Female',
-                'student_contact' => '09126789254',
-                'student_email' => 'aileelee@gmail.com',
-                'course_id' => 'CITC-BSCPE',
-                'org_id' => 'USTPCITC01'
-            ),
-            array(
-                'student_id' => '2019147653',
-                'student_name' => 'Lou Fe G. Huminay',
-                'student_year' => '2nd Year',
-                'student_gender' => 'Female',
-                'student_contact' => '09964785321',
-                'student_email' => 'loufehuminay@gmail.com',
-                'course_id' => 'CITC-BSTCM',
-                'org_id' => 'USTPCITC01'
-            ),
-            array(
-                'student_id' => '2018138452',
-                'student_name' => 'Mark John E. Laminot',
-                'student_year' => '3rd Year',
-                'student_gender' => 'Male',
-                'student_contact' => '09368241859',
-                'student_email' => 'markie22@gmail.com',
-                'course_id' => 'CITC-BSIT',
-                'org_id' => 'USTPCITC01'
-            ),
-            array(
-                'student_id' => '2019126547',
-                'student_name' => 'Mary Ann Cole H. Fuente',
-                'student_year' => '2nd Year',
-                'student_gender' => 'Female',
-                'student_contact' => '09154786400',
-                'student_email' => 'mach.fuente@gmail.com',
-                'course_id' => 'CITC-BSTCM',
-                'org_id' => 'USTPCITC01'
-            ),
-            array(
-                'student_id' => '2019106709',
-                'student_name' => 'Gervie May U. Linda',
-                'student_year' => '2nd Year',
-                'student_gender' => 'Female',
-                'student_contact' => '09285640901',
-                'student_email' => 'jvee.may@gmail.com',
-                'course_id' => 'CITC-BSTCM',
-                'org_id' => 'USTPCITC01'
-            ),
-            array(
-                'student_id' => '2020170982',
-                'student_name' => 'John Reele Z. Velez',
-                'student_year' => '1st Year',
-                'student_gender' => 'Male',
-                'student_contact' => '09162568791',
-                'student_email' => 'filmreele111@gmail.com',
-                'course_id' => 'CITC-BSIT',
-                'org_id' => 'USTPCITC01'
-            ),
-
-        ));
-
-        // Default User
-        DB::table('users')->insert(array(
-            array(
-                'username' => 'johnreele',
-                'password' => Hash::make('passtest'),
-                'role_id' => '2',
-                'student_id' => '2020170982',
-            ),
-            array(
-                'username' => 'gerviemay',
-                'password' => Hash::make('password'),
-                'role_id' => '2',
-                'student_id' => '2019106709',
-            ),
-        ));
-
-        DB::table('users')->insert(
-            array(
-                'username' => 'tr_maria',
+                'admin_id' => $id,
+                'username' => 'adminuser',
                 'password' => Hash::make('adminpass'),
-                'role_id' => '1',
-                'teacher_id' => '2005204365',
-            ),
-        );
-
-        // Default Event
-        DB::table('events')->insert(array(
-            array(
-                'event_name' => 'test event 1',
-                'event_desc' => 'the first test event at gym lobby',
-                'event_date' => '2021-02-14',
-            ),
-            array(
-                'event_name' => 'test event 2',
-                'event_desc' => 'the second test event at ict building 9',
-                'event_date' => '2021-05-21',
+                'role_id' => 'admin',
             ),
         ));
+
+        $full_year = (int)date("Y");
+        $office_id = $full_year * 10000;
+
+        // office
+        DB::table('user')->insert(
+            array(
+                'office_id' => $office_id,
+                'username' => '003001ASO',
+                'password' => Hash::make('asopassword'),
+                'role_id' => 'office',
+            ),
+        );
 
     }
 }
