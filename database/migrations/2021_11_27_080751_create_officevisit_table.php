@@ -22,7 +22,7 @@ class CreateOfficevisitTable extends Migration
         $this_year = (int)date("Y");
         $for_id = ($this_year + 800000) * 1000;
 
-        DB::update("ALTER TABLE user AUTO_INCREMENT = $for_id;");
+        DB::update("ALTER TABLE officevisit AUTO_INCREMENT = $for_id;");
     }
 
     /**

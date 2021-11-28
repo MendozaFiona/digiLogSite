@@ -17,7 +17,7 @@
 <body>
     <div class="page-wrapper">
     
-        <header class="header-desktop">
+        <header class="header-desktop " style= "background-color: #191851" >
             <div class="section__content section__content--p30">    
                 <div class="header-wrap">          
                     <div class="content">
@@ -39,61 +39,58 @@
             <div class="section__content section__content--p30">
                 <div class="container-fluid">   
     
-                    <div class="row">
+                  <div class="row">
+                  <div class="jumbotron container" style= "margin-top: 40px; background-color: #191851">
+   <h2 class="display-4 text-light">Manage Data</h2>
+   <div class="row" >
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body"  >
+                    <h5 class="card-title">View Data</h5>
+                    <p class="card-text">View Data of Security Personnel, Office Staff and Office.</p>
+                    <a href="/events/create"class="btn btn-primary" style="background:#FFA500;border-color:#FFA500;" >View Data</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Register Data</h5>
+                    <p class="card-text">Register Security Personnel, Office Staff or Office.</p>
+                    <a href=""class="btn btn-primary" style="background:#FFA500;border-color:#FFA500;" >Register Now</a>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron container" style= "background-color: #191851">
+   <h2 class="display-4 text-light">Visitor</h2>
+   <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">All Visitor</h5>
+                    <p class="card-text">View visitor information and All visit history of Visitor.</p>
+                    <a href=""class="btn btn-primary" style="background:#FFA500;border-color:#FFA500;" >View All</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Today's Visit</h5>
+                    <p class="card-text">View today's visit Information and see Visitor visit history.</p>
+                    <a href=""class="btn btn-primary" style="background:#FFA500;border-color:#FFA500;" >View Today's Visit</a>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+
     
-                        <div class="col-lg-4">
-                            <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">                   
-                                <div class="au-task js-list-load">
-                                    <div class="au-task__item au-task__item--primary">
-                                        <div class="au-task__item-inner">
-                                            <h5 class="task">
-                                                <a href="/">View User Info</a>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    @if(Auth::user()->role_id == 1)
-                                        <div class="au-task__item au-task__item--danger">
-                                            <div class="au-task__item-inner">
-                                                <h5 class="task">
-                                                    <a href="/users">View All Users</a>
-                                                </h5>
-                                            </div>
-                                        </div>
-                                        <div class="au-task__item au-task__item--warning">
-                                            <div class="au-task__item-inner">
-                                                <h5 class="task">
-                                                    <a href="/events/create">Create Event</a>
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    @endif
-                                    <div class="au-task__item au-task__item--primary">
-                                        <div class="au-task__item-inner">
-                                            <h5 class="task">
-                                                <a href="/events">View All Events</a>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    @if(Auth::user()->role_id == 1)
-                                        <div class="au-task__item au-task__item--danger">
-                                            <div class="au-task__item-inner">
-                                                <h5 class="task">
-                                                    <a href="/attendance">Add Event Attendance</a>
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    @endif
-                                    
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="col-lg-8">
-                            @include('inc.messages')
-                            @yield('content')
-                        </div>
+                       
                         
-                    </div>
+                  </div>
     
                 </div>
             </div>

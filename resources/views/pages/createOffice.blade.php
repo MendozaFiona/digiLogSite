@@ -8,20 +8,20 @@
 <div class="au-card au-card-top-countries m-b-40">
     <div class="au-card-inner">
         <div>
-            {!! Form::open(['action' => 'App\Http\Controllers\EventController@store', 'method' => 'POST']) !!}
+            {!! Form::open(['action' => 'App\Http\Controllers\OfficeController@store', 'method' => 'POST']) !!}
 
                 <div class="form-group">
-                    {{Form::label('event_name', 'Event Name')}}
-                    {{Form::text('event_name', '', ['class' => "form-control", 'placeholder' => "event name"])}}
+                    {{Form::label('name', 'Office Name')}}
+                    {{Form::text('office_name', '', ['class' => "form-control", 'placeholder' => "Office Name"])}}
                 </div>
 
                 <div class="form-group">
-                    {{Form::label('event_date', 'Event Date')}}
-                    {{Form::text('event_date', '', ['class' => "form-control", 'placeholder' => "event date"])}}
+                    {{Form::label('username', 'Username')}}
+                    {{Form::text('username', '', ['class' => "form-control", 'placeholder' => "event date"])}}
                 </div>
 
                 <div class="form-group">
-                    {{Form::label('event_desc', 'Event Description')}}
+                    {{Form::label('event_desc', 'Password')}}
                     {{Form::textarea('event_desc', '', ['class' => "form-control", 'placeholder' => "event description"])}}
                 </div>
 

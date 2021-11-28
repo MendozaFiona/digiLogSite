@@ -284,12 +284,12 @@ class DatabaseSeeder extends Seeder
         ));
 
         // admin
-        DB::table('user')->insert(array(
+        DB::table('users')->insert(array(
             array(
                 'admin_id' => $id,
                 'username' => 'adminuser',
                 'password' => Hash::make('adminpass'),
-                'role_id' => 'admin',
+                'role_id' => 1,
             ),
         ));
 
@@ -297,12 +297,12 @@ class DatabaseSeeder extends Seeder
         $office_id = $full_year * 10000;
 
         // office
-        DB::table('user')->insert(
+        DB::table('users')->insert(
             array(
                 'office_id' => $office_id,
                 'username' => '003001ASO',
                 'password' => Hash::make('asopassword'),
-                'role_id' => 'office',
+                'role_id' => 2,
             ),
         );
 

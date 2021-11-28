@@ -7,33 +7,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-
-class User extends Authenticatable
+class Admin extends Authenticatable
 {
     use HasFactory, Notifiable;
 
     // table name
-    protected $table = 'users';
+    protected $table = 'admin';
 
     public $primary_key = 'id';
+    public $timestamps = false;
 
     protected $fillable = [
+        'name',
         'username',
         'password',
-        'role_id', // no input from form, automatically assigned
-        'student_id', // either should be filled
-        'teacher_id', //removed, uncomment if needed
     ];
 
-  
     protected $hidden = [
-        'password',
         'remember_token',
-    ];
-
-
-    protected $casts = [
-        'email_verified_at' => 'datetime',
     ];
 
     

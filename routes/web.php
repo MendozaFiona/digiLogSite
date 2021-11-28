@@ -3,7 +3,10 @@
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OfficeController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Model;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +39,14 @@ Route::resources([
 
 Route::resources([
     'attendance' => AttendanceController::class,
+]);
+
+Route::resources([
+    'admins' => AdminController::class,
+]);
+
+Route::resources([
+    'offices' => OfficeController::class,
 ]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
