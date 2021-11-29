@@ -45,7 +45,7 @@ class CampusVisitController extends Controller
     {
         $validator = Validator::make($request->all(),[
             'name' => 'required',
-            'contact' => 'required',
+            'contact' => 'required|min:11|starts_with:09',
         ]);
 
         if($validator->fails()){

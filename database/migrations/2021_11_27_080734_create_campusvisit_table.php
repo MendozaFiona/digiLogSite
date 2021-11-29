@@ -19,8 +19,8 @@ class CreateCampusvisitTable extends Migration
             $table->string('contact');
             $table->string('vehicle_type')->nullable();
             $table->string('plate_num')->nullable();
-            $table->dateTime('date');
-            $table->dateTime('time_in');
+            $table->date('date');
+            $table->time('time_in');
         });
 
         $this_year = (int)date("Y");
