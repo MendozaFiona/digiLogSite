@@ -12,20 +12,16 @@ class Office extends Authenticatable
     use HasFactory, Notifiable;
 
     // table name
+    public $timestamps = false;
+    
     protected $table = 'office';
 
     public $primary_key = 'id';
-    public $timestamps = false;
 
     protected $fillable = [
         'name',
-        'username',
-        'password',
+        'building_num',
+        'status',
     ];
-
-    protected $hidden = [
-        'remember_token',
-    ];
-
     
 }

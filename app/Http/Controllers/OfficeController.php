@@ -15,15 +15,22 @@ use Illuminate\Support\Facades\Validator;
 class OfficeController extends Controller
 {
     
-    public function index()
+    public function index($building_num)
     {
         //$office = Office::select('id', 'name')->get();
         //eturn view('pages/viewEvents')->with('$office', $office);
 
        // return view('pages/viewEvents')->with('admins', $admins);
 
-        $offices = Office::all();
-        return view('pages/viewEvents')->with('offices', $offices);
+        $offices = DB::table('office')->where('building_num',  '=', $building_num)->get();
+        
+        if($offices == NULL){
+            return response()->json(array(
+                'message' => 'No offices found'
+            ), 404);
+        }
+
+        return $offices;
     }
 
    
