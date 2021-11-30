@@ -19,89 +19,104 @@ class DatabaseSeeder extends Seeder
             array(
                 'name' => 'Admission and Scholarship Office',
                 'building_num' => '3',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Office of the Student Affairs',
                 'building_num' => '3',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array( 
                 'name' => 'Department of Mathematics Education',
                 'building_num' => '3',
+                'floor' => 2,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Department of Science Education',
                 'building_num' => '3',
+                'floor' => 2,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'College of Science and Technology Education',
                 'building_num' => '3',
+                'floor' => 2,
                 'status' => 'offline', 
             ),
             array( 
                 'name' => 'Department of Education, Planning and Management',
                 'building_num' => '3',
+                'floor' => 2,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Department of Public/Administration',
                 'building_num' => '3',
+                'floor' => 2,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Department of Teaching Languages',
                 'building_num' => '3',
+                'floor' => 2,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'USTP ROTC',
                 'building_num' => '4',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Mindanao University of Science and Technology Employees Multipurpose Cooperative',
                 'building_num' => '5',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array( 
                 'name' => 'Office of the Alumni Federation',
                 'building_num' => '5',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'JIECEP',
                 'building_num' => '5',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array( 
                 'name' => 'Civil and Sanitary Work Section',
                 'building_num' => '5',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Career Center and Industrial Relations Office',
                 'building_num' => '9',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array( 
                 'name' => 'IPFDO',
                 'building_num' => '9',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
@@ -109,30 +124,35 @@ class DatabaseSeeder extends Seeder
             array(
                 'name' => 'Office of the Dean (CITC) ',
                 'building_num' => '9',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Digital Transformation',
                 'building_num' => '9',
+                'floor' => 2,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Document Tracking System Consultation Meeting and Simulation',
                 'building_num' => '9',
+                'floor' => 2,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'E-Display Center',
                 'building_num' => '14',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Assessment',
                 'building_num' => '14',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
@@ -140,131 +160,153 @@ class DatabaseSeeder extends Seeder
             array(
                 'name' => 'Cashering',
                 'building_num' => '14',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Commission on Audit',
                 'building_num' => '14',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'NSTP',
                 'building_num' => '19',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array( 
                 'name' => 'IEP-Office',
                 'building_num' => '23',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Office of the Registrar',
                 'building_num' => '23',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Department of Technology Communication Management',
                 'building_num' => '23',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(  
                 'name' => 'Communication Arts Languages and Literature',
                 'building_num' => '23',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
             array(  
                 'name' => 'Office of the Mechanical & Electrical Works Unit',
                 'building_num' => '23',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array( 
                 'name' => 'Extension Services Office',
                 'building_num' => '24',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'CSTE',
                 'building_num' => '24',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(  
                 'name' => 'CAS Accreditation Center',
                 'building_num' => '41',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Office of the Social Sciences',
                 'building_num' => '41',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Clinic',
                 'building_num' => '41',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Department of EST and FST',
                 'building_num' => '41',
+                'floor' => 2,
                 'status' => 'offline', 
             ),
 
             array( 
                 'name' => 'Office of the Research Director',
                 'building_num' => '42',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Research Office',
                 'building_num' => '42',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Office of the Dean',
                 'building_num' => '43',
+                'floor' => 1,
                 'status' => 'offline', 
             ),
 
             array( 
                 'name' => 'Extension Community Relation Division',
                 'building_num' => '43',
+                'floor' => 2,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Faculty Office: Electrical Engineering Department',
                 'building_num' => '43',
+                'floor' => 3,
                 'status' => 'offline', 
             ),
 
             array( 
                 'name' => 'Computer Engineering Faculty Office',
                 'building_num' => '43',
+                'floor' => 3,
                 'status' => 'offline', 
             ),
 
             array(
                 'name' => 'Director for Publication',
                 'building_num' => '43',
+                'floor' => 4,
                 'status' => 'offline', 
             ),
 
             array( 
                 'name' => 'Office of the School Administration Villanueva Campus',
                 'building_num' => '43',
+                'floor' => 4,
                 'status' => 'offline', 
             ),
 

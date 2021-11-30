@@ -16,6 +16,7 @@ class CreateOfficeTable extends Migration
         Schema::create('office', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->string('name');
+            $table->integer('floor');
             $table->integer('building_num');
             $table->string('status');
         });

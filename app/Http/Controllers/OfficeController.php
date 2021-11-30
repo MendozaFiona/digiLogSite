@@ -24,10 +24,16 @@ class OfficeController extends Controller
 
         $offices = DB::table('office')->where('building_num',  '=', $building_num)->get();
         
-        if($offices == NULL || $offices->isEmpty()){
+        if($offices == NULL){
+            return response()->json(array(
+                'message' => 'Building does not exist'
+            ), 404);
+        }
+
+        if($offices->isEmpty()){
             return response()->json(array(
                 'message' => 'No offices found'
-            ), 404);
+            ), 204);
         }
 
         return $offices;
