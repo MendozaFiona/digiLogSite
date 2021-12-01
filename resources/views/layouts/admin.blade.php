@@ -18,6 +18,9 @@
     <div class="page-wrapper">
     
         <header class="header-desktop " style= "background-color: #191851" >
+        <div class="content">
+            <a href="/" class="p-3 text-white">Welcome {{ Auth::user()->name }}</a>                
+                    </div> 
             <div class="section__content section__content--p30">    
                 <div class="header-wrap">          
                     <div class="content">
@@ -37,65 +40,41 @@
         
         <div class="main-content">
             <div class="section__content section__content--p30">
-                <div class="container-fluid">   
-    
-                  <div class="row">
-                  <div class="jumbotron container" style= "margin-top: 40px; background-color: #191851">
-   <h2 class="display-4 text-light">Manage Data</h2>
-   <div class="row" >
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body"  >
-                    <h5 class="card-title">View Data</h5>
-                    <p class="card-text">View Data of Security Personnel, Office Staff and Office.</p>
-                    <a href="/events/create"class="btn btn-primary" style="background:#FFA500;border-color:#FFA500;" >View Data</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Register Data</h5>
-                    <p class="card-text">Register Security Personnel, Office Staff or Office.</p>
-                    <a href=""class="btn btn-primary" style="background:#FFA500;border-color:#FFA500;" >Register Now</a>
-                </div>  
-            </div>
-        </div>
-    </div>
-</div>
-<div class="jumbotron container" style= "background-color: #191851">
-   <h2 class="display-4 text-light">Visitor</h2>
-   <div class="row">
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">All Visitor</h5>
-                    <p class="card-text">View visitor information and All visit history of Visitor.</p>
-                    <a href=""class="btn btn-primary" style="background:#FFA500;border-color:#FFA500;" >View All</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Today's Visit</h5>
-                    <p class="card-text">View today's visit Information and see Visitor visit history.</p>
-                    <a href=""class="btn btn-primary" style="background:#FFA500;border-color:#FFA500;" >View Today's Visit</a>
-                </div>  
-            </div>
-        </div>
-    </div>
-</div>
+                <div class="container-fluid"> 
+                     <div class="row">
+                            <div class="jumbotron container" style= "margin-top: 40px; background-color: #fffff">
+                                  <h2 class="display-4 text-light">Manage Data</h2>
+                                  <div class="row justify-content-center align-self-center" >
+                                    <div class="col-sm-5">
+                                        <div class="card text-center" style= "background-color: #191851" >
+                                            <div class="card-header">
+                                                User
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <a href="/events/create" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">Register Data</a>
+                                                <a href="/users" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">View User</a>
+                                            </div>
+                                        </div>
 
-    
-                       
-                        
-                  </div>
-    
+                                        <div class="card text-center" style= "background-color: #191851" >
+                                            <div class="card-header">
+                                                Visitors
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <a href="#" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">Today</a>
+                                                <a href="#" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">All Visit</a>
+                                            </div>
+                                            
+                                        </div>                                               
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

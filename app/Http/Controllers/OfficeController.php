@@ -69,8 +69,8 @@ class OfficeController extends Controller
     
     public function show($id)
     {
-        $event = Event::where('id', $id)->first();
-        return view('events/show')->with('event', $event);
+        $office = Office::where('office_id', $office_id)->first();
+        return view('offices/show')->with('office', $office);
     }
 
     
@@ -97,7 +97,7 @@ class OfficeController extends Controller
 
         $event->save();
         
-        return redirect('/events')->with('success', 'Event Updated');
+        return redirect('/offices')->with('success', 'Event Updated');
     }
 
     
@@ -107,6 +107,6 @@ class OfficeController extends Controller
 
         $event->delete();
 
-        return redirect('/events')->with('success', 'Event Deleted');
+        return redirect('/offices')->with('success', 'Event Deleted');
     }
 }
