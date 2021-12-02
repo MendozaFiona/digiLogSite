@@ -4,13 +4,13 @@
 
 <div class="main">
     <section class="sign-in">
-        <div class="container">
+        <div class="custom-container">
             <div class="signin-content">
                 <div class="signin-image">
-                    <figure><img src="images/signin-image.jpg" alt="sing up image"></figure>
+                    <figure><img src="images/USTP-icon.png" alt="sing up image"></figure>
                 </div>
 
-                <div class="signin-form">
+                <div class="signin-form align-middle">
                     <h2 class="form-title">{{ __('Login') }}</h2>
                     <form method="POST" class="{{ route('login') }}">
                         @csrf
@@ -43,15 +43,13 @@
                         
                         </div>
 
-                        <div class="form-group form-button text-right">
+                        <div class="form-group form-button text-center">
                             <button type="submit" class="form-submit">
                                 {{ __('Login') }}
                             </button>
                         </div>
 
-                        <div class="form-group">
-                            <a href="{{ route('register') }}" class="signup-image-link">No account yet? Register here.</a>
-                        </div>
+                            <!--<a href="{{ route('register') }}" class="signup-image-link">No account yet? Register here.</a> THIS IS FOR REGISTERING-->
 
                     </form>
                 </div>
