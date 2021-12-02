@@ -300,6 +300,7 @@ section {
 }
 
 .main-content {
+    background-color: #fff;
     margin-top: 3%;
     padding-top: 116px;
     min-height: 100vh;
@@ -942,8 +943,7 @@ section {
     .header-desktop {
         position: relative;
         top: 0;
-        right: 3.5%;
-        left: 3.5%;
+        
         height: 50px;
     }
 }
