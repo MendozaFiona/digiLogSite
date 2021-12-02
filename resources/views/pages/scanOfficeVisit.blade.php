@@ -16,7 +16,7 @@
                         <div class="au-task__item au-task__item--danger" style = "background-color: #D5D8DB"> <!--route unchanged yet-->
                             <div class="au-task__item-inner">
                                 <h5 class="task">
-                                    <a href="/users">View All Visits</a>
+                                    <a href="/officeVisits">View All Visits</a>
                                 </h5>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
             
                 <div class="au-card au-card-top-countries m-b-40">
                     <div class="au-card-inner">
-                        <div class = "text-center ">
+                        <div class = "text-center">
                            <video id="preview" class = "border border-dark rounded"></video>
                         </div>
 
@@ -59,7 +59,10 @@
                                 //window.location.href=content;
                             });
 
-                            document.getElementById("endCam").onclick = function () { scanner.stop(); };
+                            document.getElementById("endCam").onclick = function () {
+                                scanner.stop();
+                                //
+                            };
                             document.getElementById("startCam").onclick = function () { Instascan.Camera.getCameras().then(function (cameras){
                                 if(cameras.length>0){
                                     scanner.start(cameras[0]);

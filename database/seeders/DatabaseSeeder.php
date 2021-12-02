@@ -348,5 +348,28 @@ class DatabaseSeeder extends Seeder
             ),
         );
 
+        $date_now = date("Y/m/d");
+        $time_now = date("h:i:s");
+
+        // campusvisit
+        DB::table('campusvisit')->insert(
+            array(
+                'name' => 'Tester A. Debugger',
+                'contact' => '09254378651',
+                'date' => $date_now,
+                'time_in' => $time_now,
+            ),
+        );
+
+        // campusvisit
+        DB::table('officevisit')->insert(
+            array(
+                'visit_id' => '602021000',
+                'office_id' => '20210000',
+                'date' => $date_now,
+                'time_in' => $time_now,
+            ),
+        );
+
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OfficeController;
+use App\Http\Controllers\OfficeVisitController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Model;
 
@@ -29,14 +30,13 @@ Route::resources([
     'users' => UserController::class,
 ]);
 
-
-Route::resources([
+/*Route::resources([
     'events' => EventController::class,
 ]);
 
 Route::resources([
     'attendance' => AttendanceController::class,
-]);
+]);*/
 
 Route::resources([
     'admins' => AdminController::class,
@@ -45,6 +45,11 @@ Route::resources([
 Route::resources([
     'offices' => OfficeController::class,
 ]);
+
+Route::resources([
+    'officeVisits' => OfficeVisitController::class,
+]);
+
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/attendance/{id}', [App\Http\Controllers\AttendanceController::class, 'createAttendance'])->name('create-attendance');

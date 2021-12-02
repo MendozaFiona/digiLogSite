@@ -17,6 +17,8 @@ class CreateOfficevisitTable extends Migration
             $table->bigIncrements('id')->unsigned();
             $table->integer('visit_id')->references('id')->on('campusvisit');
             $table->integer('office_id')->references('id')->on('office');
+            $table->date('date');
+            $table->time('time_in');
         });
 
         $this_year = (int)date("Y");
