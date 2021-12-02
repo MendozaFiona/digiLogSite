@@ -7,7 +7,7 @@
         <div class="custom-container">
             <div class="signin-content">
                 <div class="signin-image">
-                    <figure><img src="images/USTP-icon.png" alt="sing up image"></figure>
+                    <figure><img src="images/USTP-icon.png" alt="sign in image"></figure>
                 </div>
 
                 <div class="signin-form align-middle">

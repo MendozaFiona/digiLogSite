@@ -23,9 +23,6 @@ Auth::routes(); // from bootstrap install
 
 // routes for views/pages display
 Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
-//Route::get('/register', [App\Http\Controllers\PagesController::class, 'register'])->name('register');
-//Route::get('/view-events', [App\Http\Controllers\PagesController::class, 'viewEvents'])->name('view-events');
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // routes for user transactions
 Route::resources([

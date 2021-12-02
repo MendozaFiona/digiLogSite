@@ -1,52 +1,41 @@
-@extends('layouts/admin')
+@extends('layouts/header')
 
 @section('content')
-<div class="au-card recent-report">
-    <h5 class="title-2">User Profile</h5>
-</div>
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid"> 
+                <div class="row">
+                    <div class="jumbotron container" style= "margin-top: 40px; background-color: #fffff">
+                        <h2 class="display-4 text-light">Manage Data</h2>
+                        <div class="row justify-content-center align-self-center" >
+                            <div class="col-sm-5">
+                                <div class="card text-center" style= "background-color: #191851" >
+                                    <div class="card-header">
+                                        User
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Special title treatment</h5>
+                                        <a href="/offices/create" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">Register Data</a>
+                                        <a href="/users" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">View User</a>
+                                    </div>
+                                </div>
 
-<div class="au-card au-card-top-countries m-b-40">
-    <div class="au-card-inner">
-        <div class="table-responsive">
-            <table class="table table-top-countries">
-                <tbody>
-                    <tr>
-                        <td>User ID</td>
-                        <td class="text-right">{{ Auth::user()->id }}</td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td class="text-right">{{ Auth::user()->username }}</td>
-                    </tr>
-
-                    @if(Auth::user()->student_id != null)
-                        <tr>
-                            <td>School ID</td>
-                            <td class="text-right">{{ Auth::user()->student_id }}</td>
-                        </tr>
-                    @endif
-
-                    @if(Auth::user()->student_id == null)
-                        <tr>
-                            <td>Teacher ID</td>
-                            <td class="text-right">{{ Auth::user()->teacher_id }}</td>
-                        </tr>
-                    @endif
-
-                    <tr>
-                        <td>Role</td>
-                            @if(Auth::user()->role_id == 1)
-                                <td class="text-right">Moderator</td>
-                            @endif
-
-                            @if(Auth::user()->role_id == 2)
-                                <td class="text-right">Member</td>  
-                            @endif
-                    </tr>
-                    
-                </tbody>
-            </table>
+                                <div class="card text-center" style= "background-color: #191851" >
+                                    <div class="card-header">
+                                        Visitors
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Special title treatment</h5>
+                                        <a href="#" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">Today</a>
+                                        <a href="#" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">All Visit</a>
+                                    </div>
+                                    
+                                </div>                                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 @endsection

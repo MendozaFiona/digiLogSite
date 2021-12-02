@@ -1,8 +1,8 @@
-@extends('layouts/adminviewuser')
+@extends('layouts/view-users')
 
-@section('content')
+@section('view-content')
 <div class="au-card recent-report">
-    <h5 class="title-2">View All Users</h5>
+    <h5 class="title-2">View Admin Users</h5>
 </div>
 
 
@@ -21,12 +21,13 @@
 
                     @if(count($users) > 1)
                         @foreach($users as $user)
-                            @if($users->role_id != 1)
+                            @if($user->role_id == 1)
                                 <tr onclick="window.location='/users/{{$user->id}}'">
-                                    <td>{{$users->id}}</td>
-                                    <td class="text-right">{{$users->username}}</td>
+                                    <td>{{$user->id}}</td>
+                                    <td class="text-right">{{$user->username}}</td>
                                 </tr>
                             @endif
+                            
                         @endforeach
                     @else 
                         <p>No Users</p>

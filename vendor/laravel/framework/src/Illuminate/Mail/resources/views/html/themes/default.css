@@ -90,8 +90,8 @@ img {
     -premailer-cellpadding: 0;
     -premailer-cellspacing: 0;
     -premailer-width: 100%;
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding: 10px;
     width: 100%;
 }
 

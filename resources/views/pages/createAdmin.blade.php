@@ -1,6 +1,6 @@
-@extends('layouts/originaladmin')
+@extends('layouts/register-data')
 
-@section('content')
+@section('register-content')
 <div class="au-card recent-report">
     <h5 class="title-2">Create Event</h5>
 </div>

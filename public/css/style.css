@@ -532,6 +532,13 @@ label.valid {
   margin-right: 20px;
   margin-top: 10px; }
 
+.custom-center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
 @media screen and (max-width: 1200px) {
   .container {
     width: calc( 100% - 30px);

@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index() // show all users
     {
         $users = User::all();
-        return view('pages/viewAdmins')->with('users', $users); // pagesctrlr is not used!
+        return view('pages/viewOffices')->with('users', $users); // pagesctrlr is not used!
         // perform an additional layout for user information
     }
 
