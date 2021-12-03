@@ -43,6 +43,24 @@ class OfficeVisitController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function storeCode(Request $request)
+    {
+        $name = $request->name;
+        
+        $officeVisit = new OfficeVisit;
+
+        $visitID = CampusVisit::select('id')->where('name', $name)->orderBy('time_in', 'desc')->first();
+        
+        $officeVisit->visit_id = $visitID->id;
+        $officeVisit->office_id = Auth::user()->office_id;
+        $officeVisit->date = date("Y/m/d");
+        $officeVisit->time_in = date("h:i:s");
+
+        $officeVisit->save();
+
+        return redirect('/')->with('success', 'Office Visit Successfully Added');
+    }
+
     public function store(Request $request)
     {
         $nameID = $request->input('name');
@@ -62,7 +80,7 @@ class OfficeVisitController extends Controller
 
         $officeVisit->save();
 
-        return redirect('/')->with('success', 'Office Visit Successfully Added');
+        return back()->with('success', 'Office Visit Successfully Added');
 
     }
 

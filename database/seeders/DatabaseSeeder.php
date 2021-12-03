@@ -383,6 +383,17 @@ class DatabaseSeeder extends Seeder
             ),
         );
 
+        $time_thr = date("h:i:s", (time() + 347));
+
+        DB::table('campusvisit')->insert(
+            array(
+                'name' => 'Fiona Glezen Xi P. Mendoza',
+                'contact' => '09684365921',
+                'date' => $date_now,
+                'time_in' => $time_thr,
+            ),
+        );
+
         $time_ov = date("h:i:s", (time() + 90));
 
         // officevisit

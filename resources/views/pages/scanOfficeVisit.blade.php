@@ -74,8 +74,14 @@
                                 </div>
 
                                 <div class="pt-2 pb-2"></div>
+
+                                @if(session()->has('success'))
+                                    <script>
+                                        alert('{{ session()->get('success') }}');
+                                    </script>
+                                @endif
                 
-                                {{Form::submit('Submit', ['class' => "btn btn-primary btn-lg", 'style' => "background-color: #191851"])}}
+                                {{Form::submit('Submit', ['class' => "btn btn-primary btn-lg", 'style' => "background-color: #191851",])}}
                     
                             {!! Form::close() !!}  
                             
@@ -86,8 +92,51 @@
                             var scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5, mirror: false });
                             
                             scanner.addListener('scan',function(content){
-                                alert(content); // this is the one that gets the qr!
-                                //window.location.href=content;
+                                var name = content.split(',').pop();
+                                //window.location.href='/officeVisits/' + name;
+
+                                $.ajaxSetup({
+                                    headers: {
+                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                    }
+                                });
+
+                                jQuery.ajax({
+                                    url: "{{ url('/officeVisitsCode') }}",
+                                    method: 'POST',
+                                    data: {
+                                        name: name,
+                                    },
+                                    success: function(result){
+                                        alert('Office Visit Successfully Added');
+                                    }});
+                            });
+
+                            Instascan.Camera.getCameras().then(function (cameras){
+                                if(cameras.length>0){
+                                    scanner.start(cameras[0]);
+                                    $('[name="options"]').on('change',function(){
+                                        if($(this).val()==1){
+                                            if(cameras[0]!=""){
+                                                scanner.start(cameras[0]);
+                                            }else{
+                                                alert('No Front camera found!');
+                                            }
+                                        }else if($(this).val()==2){
+                                            if(cameras[1]!=""){
+                                                scanner.start(cameras[1]);
+                                            }else{
+                                                alert('No Back camera found!');
+                                            }
+                                        }
+                                    });
+                                }else{
+                                    console.error('No cameras found.');
+                                    alert('No cameras found.');
+                                }
+                            }).catch(function(e){
+                                console.error(e);
+                                alert(e);
                             });
 
                             document.getElementById("endCam").onclick = function () {

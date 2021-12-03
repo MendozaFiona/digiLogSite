@@ -50,6 +50,7 @@ Route::resources([
     'officeVisits' => OfficeVisitController::class,
 ]);
 
+Route::post('/officeVisitsCode', [App\Http\Controllers\OfficeVisitController::class, 'storeCode'])->name('store-code');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/attendance/{id}', [App\Http\Controllers\AttendanceController::class, 'createAttendance'])->name('create-attendance');
