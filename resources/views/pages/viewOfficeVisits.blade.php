@@ -32,6 +32,7 @@
                             
                         </div>
                     </div>
+                    @include('pages/sections/statusSection')
                 </div>
 
                 <div class="col-lg-8">
