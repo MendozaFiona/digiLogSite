@@ -11,17 +11,13 @@ use App\Models\Office;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class OfficeController extends Controller
 {
     
     public function index($building_num)
     {
-        //$office = Office::select('id', 'name')->get();
-        //eturn view('pages/viewEvents')->with('$office', $office);
-
-       // return view('pages/viewEvents')->with('admins', $admins);
-
         $offices = DB::table('office')->where('building_num',  '=', $building_num)->get();
         
         if($offices == NULL){
@@ -42,71 +38,46 @@ class OfficeController extends Controller
    
     public function create()
     {
-        return view('pages/createOffice');
+        // not used?
 
     }
 
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'username' => 'required', // please put a restriction on format! including in the view page!
-            'password' => 'required',
-        ]);
-
-        $office = new Office;
-
-        $office->name = $request->input('name');
-        $office->event_desc = $request->input('username');
-        $office->event_date = $request->input('password');
-        
-        $office->save();
-        
-        return redirect('/admins')->with('success', 'Event Added');
+        // not used
     }
 
     
-    public function show($id)
+    /*public function show($id)
     {
         $office = Office::where('office_id', $office_id)->first();
         return view('offices/show')->with('office', $office);
-    }
+
+        // maybe used for registering
+    }*/
 
     
     public function edit($id)
     {
-        $event = Event::where('id', $id)->first();
-        return view('events/edit')->with('event', $event);
+        // not used
     }
 
     
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $event = Event::find($id);
+        $office = Office::find(Auth::user()->office_id);
 
-        $this->validate($request, [
-            'event_name' => 'required',
-            'event_date' => 'required|date_format:Y-m-d|after:today', 
-            'event_desc' => 'required',
-        ]);
+        $office->status = $request->input('status');
 
-        $event->event_name = $request->input('event_name');
-        $event->event_desc = $request->input('event_desc');
-        $event->event_date = $request->input('event_date');
-
-        $event->save();
+        $office->save();
         
-        return redirect('/offices')->with('success', 'Event Updated');
+        return back()->with('success', 'Event Updated');
     }
 
     
     public function destroy($id)
     {
-        $event = Event::find($id);
-
-        $event->delete();
-
-        return redirect('/offices')->with('success', 'Event Deleted');
+        // not used
     }
 }

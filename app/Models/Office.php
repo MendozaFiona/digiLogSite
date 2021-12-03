@@ -23,5 +23,14 @@ class Office extends Authenticatable
         'building_num',
         'status',
     ];
+
+    public static function officeStatus($officeID)
+    {
+        $status = Office::select('status')->where('id', $officeID)->value('status');
+
+        $officeStatus = strval($status);
+
+        return $officeStatus;
+    }
     
 }
