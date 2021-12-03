@@ -2,7 +2,7 @@
 
 @section('register-content')
 <div class="au-card recent-report">
-    <h5 class="title-2">Create Event</h5>
+    <h5 class="title-2">Add Admin User</h5>
 </div>
 
 <div class="au-card au-card-top-countries m-b-40">

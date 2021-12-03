@@ -1,3 +1,7 @@
+@php
+   use App\Models\CampusVisit;
+@endphp
+
 <div class="section__content section__content--p30">
     <div class="container-fluid">   
 
@@ -37,7 +41,7 @@
                            <video id="preview" class = "border border-dark rounded"></video>
                         </div>
 
-                        <div class="container pt-3">
+                        <div class="container pt-3 pb-5">
                             <div class="row">
                                 <div class="col"></div>
                                 <div class="col">
@@ -48,6 +52,33 @@
                                 </div>
                                 <div class="col"></div>
                             </div>
+                        </div>
+
+                        <div class="container w-50 pb-5 pt-5 text-center" style = "background-color: #D5D8DB; border-radius: 20px">
+                            <div class="text-center pb-2">
+                                <h3>Manual Input</h3>
+                            </div>
+                            
+                            {!! Form::open(['action' => 'App\Http\Controllers\OfficeVisitController@store', 'method' => 'POST']) !!}
+                
+                                <div class="pt-2 pb-2"></div>    
+                                <div class="form-group">
+                                    
+                                    {{Form::label('name', 'Visitor Name')}}
+                                    {{Form::select('name',
+                                        CampusVisit::namesArray(),
+                                        ['class' => "form-control row w-100 center-block"])
+                                    }}
+                                    
+                                    
+                                </div>
+
+                                <div class="pt-2 pb-2"></div>
+                
+                                {{Form::submit('Submit', ['class' => "btn btn-primary btn-lg", 'style' => "background-color: #191851"])}}
+                    
+                            {!! Form::close() !!}  
+                            
                         </div>
                                 
                         <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>

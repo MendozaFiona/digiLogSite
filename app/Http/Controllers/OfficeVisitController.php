@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 
 // model that we are using
 use App\Models\OfficeVisit;
+use App\Models\CampusVisit;
 
 // the following are added utilities!
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class OfficeVisitController extends Controller
 {
@@ -43,7 +45,25 @@ class OfficeVisitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nameID = $request->input('name');
+
+        $namesArray = CampusVisit::namesArray();
+
+        $name = $namesArray[$nameID];
+
+        $officeVisit = new OfficeVisit;
+
+        $visitID = CampusVisit::select('id')->where('name', $name)->orderBy('time_in', 'desc')->first();
+        
+        $officeVisit->visit_id = $visitID->id;
+        $officeVisit->office_id = Auth::user()->office_id;
+        $officeVisit->date = date("Y/m/d");
+        $officeVisit->time_in = date("h:i:s");
+
+        $officeVisit->save();
+
+        return redirect('/')->with('success', 'Office Visit Successfully Added');
+
     }
 
     /**

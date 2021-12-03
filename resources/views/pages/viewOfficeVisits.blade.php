@@ -1,3 +1,8 @@
+@php
+   use App\Models\CampusVisit; 
+   use Carbon\Carbon;
+@endphp
+
 @extends('layouts/header')
 
 @section('content')
@@ -59,8 +64,9 @@
                                     @if(count($officeVisits) > 0)
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th>Visit ID</th>
-                                                <th class="text-right">Name</th>
+                                                <th class="text-center">Visit ID</th>
+                                                <th class="text-center">Name</th>
+                                                <th class="text-center">Time In</th>
                                             </tr>
                                         </thead>
 
@@ -71,12 +77,13 @@
                                         
                                             @foreach($officeVisits as $officeVisit)
                                             <!--include if(date == today here)-->
-                                                @if($officeVisit->date ==  Carbon\Carbon::today()->format('Y-m-d'))
+                                                @if($officeVisit->date ==  Carbon::today()->format('Y-m-d'))
                                             
                                                     @if($officeVisit->office_id == Auth::user()->office_id)
                                                         <tr onclick="window.location='/officeVisits/{{$officeVisit->id}}'">
-                                                            <td>{{$officeVisit->id}}</td>
-                                                            <td class="text-right">test</td>
+                                                            <td class="text-center">{{$officeVisit->id}}</td>
+                                                            <td class="text-center">{{ CampusVisit::name($officeVisit->visit_id) }} </td>
+                                                            <td class="text-center">{{$officeVisit->time_in}}</td>
                                                             <!--access db here to display other details such as name, time in, etc.-->
                                                         </tr>
                                                     @endif

@@ -361,13 +361,37 @@ class DatabaseSeeder extends Seeder
             ),
         );
 
-        // campusvisit
+        $time_sec = date("h:i:s", (time() + 15));
+
+        DB::table('campusvisit')->insert(
+            array(
+                'name' => 'Tester A. Debugger',
+                'contact' => '09254378651',
+                'date' => $date_now,
+                'time_in' => $time_sec,
+            ),
+        );
+
+        $time_thr = date("h:i:s", (time() + 189));
+
+        DB::table('campusvisit')->insert(
+            array(
+                'name' => 'Another B. Programmer',
+                'contact' => '09789234172',
+                'date' => $date_now,
+                'time_in' => $time_thr,
+            ),
+        );
+
+        $time_ov = date("h:i:s", (time() + 90));
+
+        // officevisit
         DB::table('officevisit')->insert(
             array(
                 'visit_id' => '602021000',
                 'office_id' => '20210000',
                 'date' => $date_now,
-                'time_in' => $time_now,
+                'time_in' => $time_ov,
             ),
         );
 

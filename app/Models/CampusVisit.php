@@ -21,4 +21,14 @@ class CampusVisit extends Model
         'date', 
         'time_in',
     ];
+
+    public static function name($visit_id)
+    {
+        return CampusVisit::where('id', $visit_id)->first()->name;
+    }
+
+    public static function namesArray()
+    {
+        return CampusVisit::distinct()->pluck('name')->all();
+    }
 }

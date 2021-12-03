@@ -49,7 +49,6 @@
                             </button>
                         </div>
 
-                            <!--<a href="{{ route('register') }}" class="signup-image-link">No account yet? Register here.</a> THIS IS FOR REGISTERING-->
 
                     </form>
                 </div>
