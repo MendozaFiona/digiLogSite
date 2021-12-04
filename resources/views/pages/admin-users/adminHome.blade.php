@@ -11,7 +11,7 @@
                             </div>
                             <div class="card-body">
                                 
-                                <a href="/offices/create" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">Register Data</a>
+                                <a href="/createOfficeUser" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">Register Data</a>
                                 <a href="/users" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">View User</a>
                             </div>
                         </div>

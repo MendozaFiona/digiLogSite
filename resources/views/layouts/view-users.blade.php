@@ -17,10 +17,10 @@
                                         </h5>
                                     </div>
                                 </div>
-                                <div class="au-task__item au-task__item--danger" style = "background-color: #FDB417">
+                                <div class="au-task__item au-task__item--danger" style = "background-color: #D5D8DB">
                                     <div class="au-task__item-inner">
                                         <h5 class="task">
-                                            <a href="/users">Admin Users</a>
+                                            <a href="/admins">Admin Users</a>
                                         </h5>
                                     </div>
                                 </div>

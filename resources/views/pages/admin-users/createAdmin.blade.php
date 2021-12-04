@@ -8,7 +8,7 @@
 <div class="au-card au-card-top-countries m-b-40">
     <div class="au-card-inner">
     <div>
-            {!! Form::open(['action' => 'App\Http\Controllers\AdminController@store', 'method' => 'POST']) !!}
+            {!! Form::open(['action' => 'App\Http\Controllers\UserController@storeAdminUser', 'method' => 'POST']) !!}
 
                 <div class="form-group">
                     {{Form::label('name', 'Admin Name')}}

@@ -20,12 +20,13 @@ class OfficeController extends Controller
     public function __construct()
     {
         $this->middleware('preventBackHistory');
-        $this->middleware('auth');
+        $this->middleware('auth'); // MAYBE THIS WILL PREVENT THE PHONE TO SUBMIT DATA
     }
     
     
     public function index($building_num)
     {
+        // FROM PHONE
         $offices = DB::table('office')->where('building_num',  '=', $building_num)->get();
         
         if($offices == NULL){
@@ -43,37 +44,10 @@ class OfficeController extends Controller
         return $offices;
     }
 
-   
-    public function create()
-    {
-        return view('pages/admin-users/createOffice');
-
-    }
-
-
-    public function store(Request $request)
-    {
-        // not used
-    }
-
-    
-    /*public function show($id)
-    {
-        $office = Office::where('office_id', $office_id)->first();
-        return view('offices/show')->with('office', $office);
-
-        // maybe used for registering
-    }*/
-
-    
-    public function edit($id)
-    {
-        // not used
-    }
-
     
     public function update(Request $request)
     {
+        // FROM OFFICE SITE
         $office = Office::find(Auth::user()->office_id);
 
         $office->status = $request->input('status');
@@ -83,9 +57,4 @@ class OfficeController extends Controller
         return back()->with('success', 'Event Updated');
     }
 
-    
-    public function destroy($id)
-    {
-        // not used
-    }
 }

@@ -2,7 +2,7 @@
 
 @section('view-content')
 <div class="au-card recent-report">
-    <h5 class="title-2">View Admin Users</h5>
+    <h5 class="title-2">View Office Users</h5>
 </div>
 
 

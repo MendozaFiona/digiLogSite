@@ -36,5 +36,9 @@ class Office extends Authenticatable
     public static function office($officeID){
         return Office::select('name')->where('id', $officeID)->value('name');
     }
+
+    public static function officesArray(){
+        return Office::pluck('name')->all();
+    }
     
 }

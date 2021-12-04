@@ -1,8 +1,6 @@
 <?php
 
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\EventController;
-use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OfficeController;
 use App\Http\Controllers\OfficeVisitController;
@@ -27,24 +25,31 @@ use App\Models\Model;
 // routes for user transactions
 Route::group(['middleware' => ['preventBackHistory']],function(){
     Auth::routes();
-    Route::resources([
-        'users' => UserController::class,
-    ]);
-    
-    Route::resources([
-        'admins' => AdminController::class,
-    ]);
-    
-    Route::resources([
-        'offices' => OfficeController::class,
-    ]);
+
+    Route::group(['middleware' => ['admin']], function () {
+        Route::resources([
+            'users' => UserController::class,
+        ]);
+
+        Route::get('/admins', [App\Http\Controllers\UserController::class, 'admin'])->name('view-admin');
+
+        Route::get('/createOfficeUser', [App\Http\Controllers\UserController::class, 'createOfficeUser'])->name('create-office');
+        Route::get('/createAdminUser', [App\Http\Controllers\UserController::class, 'createAdminUser'])->name('create-admin');
+
+        Route::post('/storeOfficeUser', [App\Http\Controllers\UserController::class, 'storeOfficeUser'])->name('store-office');
+        Route::post('/storeAdminUser', [App\Http\Controllers\UserController::class, 'storeAdminUser'])->name('store-admin');
+ 
+    });
     
     Route::resources([
         'officeVisits' => OfficeVisitController::class,
+    ]);
+
+    Route::resources([
+        'offices' => OfficeController::class,
     ]);
     
     Route::post('/officeVisitsCode', [App\Http\Controllers\OfficeVisitController::class, 'storeCode'])->name('store-code');
     
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::post('/attendance/{id}', [App\Http\Controllers\AttendanceController::class, 'createAttendance'])->name('create-attendance');
 });

@@ -30,28 +30,14 @@ class OfficeVisitController extends Controller
     
     public function index()
     {
+        // FROM OFFICE SITE: VIEW
         $officeVisits = OfficeVisit::all();
         return view('pages/office-users/viewOfficeVisits')->with('officeVisits', $officeVisits);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function storeCode(Request $request)
     {
+        // FROM OFFICE SITE
         $name = $request->name;
         
         $officeVisit = new OfficeVisit;
@@ -70,6 +56,7 @@ class OfficeVisitController extends Controller
 
     public function store(Request $request)
     {
+        // FROM OFFICE SITE
         $nameID = $request->input('name');
 
         $namesArray = CampusVisit::namesArray();
@@ -91,49 +78,11 @@ class OfficeVisitController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\OfficeVisit  $officeVisit
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
+        // FROM OFFICE SITE
         $visit = OfficeVisit::where('id', $id)->first();
         return view('pages/office-users/viewSpecificVisit')->with('visit', $visit);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\OfficeVisit  $officeVisit
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(OfficeVisit $officeVisit)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\OfficeVisit  $officeVisit
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, OfficeVisit $officeVisit)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\OfficeVisit  $officeVisit
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(OfficeVisit $officeVisit)
-    {
-        //
-    }
 }

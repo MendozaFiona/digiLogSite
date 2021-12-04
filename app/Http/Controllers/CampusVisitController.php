@@ -22,34 +22,13 @@ class CampusVisitController extends Controller
     public function __construct()
     {
         $this->middleware('preventBackHistory');
-        $this->middleware('auth');
+        $this->middleware('auth'); // MAYBE THIS WILL PREVENT THE PHONE TO SUBMIT DATA
     }
     
-    public function index()
-    {
-        $campus_visits = CampusVisit::all();
-        return view('pages/campus-visits')/*->with('events', $events)*/;
-        // with is only used if there are passed arguments
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        // not used since we arent creating campus visits in the site
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
+        // FROM PHONE
         $validator = Validator::make($request->all(),[
             'name' => 'required',
             'contact' => 'required|min:11|starts_with:09',
@@ -96,39 +75,5 @@ class CampusVisitController extends Controller
         ), 201);
 
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        // this part here is for the site
-    }
-
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        // only for timeout but we removed that 
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        // maybe in the future?
-    }
+ 
 }
