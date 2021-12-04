@@ -13,11 +13,11 @@
                         <div class="au-task__item au-task__item--danger" style = "background-color: #FDB417">
                             <div class="au-task__item-inner">
                                 <h5 class="task">
-                                    <a href="/">Scan QR Code</a> <!--route unchanged yet-->
+                                    <a href="/">Scan QR Code</a>
                                 </h5>
                             </div>
                         </div>
-                        <div class="au-task__item au-task__item--danger" style = "background-color: #D5D8DB"> <!--route unchanged yet-->
+                        <div class="au-task__item au-task__item--danger" style = "background-color: #D5D8DB">
                             <div class="au-task__item-inner">
                                 <h5 class="task">
                                     <a href="/officeVisits">View All Visits</a>

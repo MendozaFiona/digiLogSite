@@ -27,6 +27,21 @@ class CampusVisit extends Model
         return CampusVisit::where('id', $visit_id)->first()->name;
     }
 
+    public static function contact($visit_id)
+    {
+        return CampusVisit::where('id', $visit_id)->first()->contact;
+    }
+
+    public static function timeIn($visit_id)
+    {
+        return CampusVisit::where('id', $visit_id)->first()->time_in;
+    }
+
+    public static function purpose($visit_id)
+    {
+        return CampusVisit::where('id', $visit_id)->first()->purpose;
+    }
+
     public static function namesArray()
     {
         return CampusVisit::distinct()->pluck('name')->all();

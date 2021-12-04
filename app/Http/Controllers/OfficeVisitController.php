@@ -90,9 +90,10 @@ class OfficeVisitController extends Controller
      * @param  \App\Models\OfficeVisit  $officeVisit
      * @return \Illuminate\Http\Response
      */
-    public function show(OfficeVisit $officeVisit)
+    public function show($id)
     {
-        //
+        $visit = OfficeVisit::where('id', $id)->first();
+        return view('pages/viewSpecificVisit')->with('visit', $visit);
     }
 
     /**

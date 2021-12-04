@@ -32,5 +32,9 @@ class Office extends Authenticatable
 
         return $officeStatus;
     }
+
+    public static function office($officeID){
+        return Office::select('name')->where('id', $officeID)->value('name');
+    }
     
 }

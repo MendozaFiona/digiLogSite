@@ -1,5 +1,6 @@
 @php
    use App\Models\CampusVisit; 
+   use App\Models\OfficeVisit; 
    use Carbon\Carbon;
 @endphp
 
@@ -18,11 +19,11 @@
                             <div class="au-task__item au-task__item--danger" style = "background-color: #D5D8DB">
                                 <div class="au-task__item-inner">
                                     <h5 class="task">
-                                        <a href="/">Scan QR Code</a> <!--route unchanged yet-->
+                                        <a href="/">Scan QR Code</a>
                                     </h5>
                                 </div>
                             </div>
-                            <div class="au-task__item au-task__item--danger" style = "background-color: #FDB417"> <!--route unchanged yet-->
+                            <div class="au-task__item au-task__item--danger" style = "background-color: #FDB417">
                                 <div class="au-task__item-inner">
                                     <h5 class="task">
                                         <a href="/officeVisits">View All Visits</a>
@@ -56,7 +57,7 @@
 
                             weekArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',
                                 'Thursday', 'Friday', 'Saturday', 'Sunday']
-                            document.getElementById("date").innerHTML = weekArray[w] + " | " + monthsArray[m] + " " + d + ", " + y;
+                            document.getElementById("date").innerText = weekArray[w] + " | " + monthsArray[m] + " " + d + ", " + y;
                         </script>
 
                         <div class="au-card-inner">
@@ -71,7 +72,7 @@
                                             </tr>
                                         </thead>
 
-                                        <p class="text-center">Number of Visits: {{count($officeVisits)}}</p>
+                                        <p class="text-center">Number of Visits: {{count(OfficeVisit::todayOfficeVisits(Carbon::today()->format('Y-m-d')))}}</p>
 
                                         <tbody>
                     
