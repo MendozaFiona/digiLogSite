@@ -17,12 +17,12 @@
 
                 <div class="form-group">
                     {{Form::label('username', 'Username')}}
-                    {{Form::text('username', '', ['class' => "form-control", 'placeholder' => "event date"])}}
+                    {{Form::text('username', '', ['class' => "form-control", 'placeholder' => "Username"])}}
                 </div>
 
                 <div class="form-group">
-                    {{Form::label('event_desc', 'Password')}}
-                    {{Form::textarea('event_desc', '', ['class' => "form-control", 'placeholder' => "event description"])}}
+                    {{Form::label('password', 'Password')}}
+                    {{Form::textarea('password', '', ['class' => "form-control", 'placeholder' => "Password"])}}
                 </div>
 
                 {{Form::submit('Submit', ['class' => "btn btn-primary btn-lg pull-right"])}}

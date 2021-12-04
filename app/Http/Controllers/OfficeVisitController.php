@@ -24,7 +24,7 @@ class OfficeVisitController extends Controller
     public function index()
     {
         $officeVisits = OfficeVisit::all();
-        return view('pages/viewOfficeVisits')->with('officeVisits', $officeVisits);
+        return view('pages/office-users/viewOfficeVisits')->with('officeVisits', $officeVisits);
     }
 
     /**
@@ -93,7 +93,7 @@ class OfficeVisitController extends Controller
     public function show($id)
     {
         $visit = OfficeVisit::where('id', $id)->first();
-        return view('pages/viewSpecificVisit')->with('visit', $visit);
+        return view('pages/office-users/viewSpecificVisit')->with('visit', $visit);
     }
 
     /**

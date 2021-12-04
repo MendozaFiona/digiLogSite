@@ -3,11 +3,11 @@
 @section('content')
     <div class="main-content">
         @if(Auth::user()->role_id == 1)
-            @include('pages/adminHome')
+            @include('pages/admin-users/adminHome')
         @endif
 
         @if(Auth::user()->role_id == 2)
-            @include('pages/scanOfficeVisit')
+            @include('pages/office-users/scanOfficeVisit')
         @endif
         
     </div>

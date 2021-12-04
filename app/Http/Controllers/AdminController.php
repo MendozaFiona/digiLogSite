@@ -24,7 +24,7 @@ class AdminController extends Controller
    
     public function create()
     {
-        return view('pages/createAdmin');
+        return view('pages/admin-users/createAdmin');
 
     }
 

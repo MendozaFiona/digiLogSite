@@ -38,7 +38,7 @@ class OfficeController extends Controller
    
     public function create()
     {
-        // not used?
+        return view('pages/admin-users/createOffice');
 
     }
 
