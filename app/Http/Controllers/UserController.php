@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 // model that we are using
 use App\Models\User;
+use App\Models\Office;
 
 // the following are added utilities!
 use Illuminate\Support\Facades\DB;
@@ -80,6 +81,22 @@ class UserController extends Controller
             return Redirect::back()->withErrors($validator);
         }
         
+        $user = new User;
+
+        $offices_array = Office::officesArray();
+        $office_name =  $offices_array[$request->input('name')];
+
+        $office_id = Office::select('id')->where('name', $office_name)->first();
+        
+        $user->username = $request->input('username');
+        $user->password = Hash::make($request->input('password'));
+        $user->office_id = $office_id->id;
+        $user->role_id = 2;
+
+        $user->save();
+
+        return Redirect::back()->with('success', 'Registration Successful');
+
     }
 
 

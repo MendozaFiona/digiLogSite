@@ -16,17 +16,18 @@ class User extends Authenticatable
     protected $table = 'users';
 
     public $primary_key = 'id';
+    public $timestamps = false;
 
     protected $fillable = [
         'username',
         'password',
-        'role_id', // no input from form, automatically assigned
-        'student_id', // either should be filled
-        'teacher_id', //removed, uncomment if needed
+        'office_id', // no input from form, automatically assigned
+        'admin_id', // either should be filled
+        'role_id', //removed, uncomment if needed
     ];
 
   
-    protected $hidden = [
+    /*protected $hidden = [
         'password',
         'remember_token',
     ];
@@ -34,7 +35,7 @@ class User extends Authenticatable
 
     protected $casts = [
         'email_verified_at' => 'datetime',
-    ];
+    ];*/
 
     
 }
