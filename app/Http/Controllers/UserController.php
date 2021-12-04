@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 // model that we are using
 use App\Models\User;
 use App\Models\Office;
+use App\Models\Admin;
 
 // the following are added utilities!
 use Illuminate\Support\Facades\DB;
@@ -51,8 +52,8 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(),[
             // user_id is automatically generated
-            'name' => 'required',
-            'username' => 'required|min:4',
+            'name' => 'required|min:4',
+            'username' => 'required|min:4|unique:users',
             'password' => 'required|min:8',
             'confirm' => 'required_with:password|same:password', 
         ]);
@@ -60,6 +61,30 @@ class UserController extends Controller
         if($validator->fails()) {
             return Redirect::back()->withErrors($validator);
         }
+        $admin = new Admin;
+
+        $init = "ADMIN";
+        $year = substr(date("Y"), -2);
+        $date_time_spec = date("m"."d"."h"."i"."s");
+            
+        $id = $init.$year.$date_time_spec;
+
+        $admin->id = $id;
+        $admin->name = $request->input('name');
+
+        $admin->save();
+
+        $user = new User;
+
+        $user->admin_id = $id;
+        $user->username = $request->input('username');
+        $user->password = Hash::make($request->input('password'));
+        $user->role_id = 1;
+
+        $user->save();
+
+        return Redirect::back()->with('success', 'Admin Registration Successful');
+
     }
 
     public function createOfficeUser() // for Registration, acquire input
@@ -72,7 +97,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(),[
             // user_id is automatically generated
             'name' => 'required',
-            'username' => 'required|min:4',
+            'username' => 'required|min:4|unique:username',
             'password' => 'required|min:8',
             'confirm' => 'required_with:password|same:password', 
         ]);
@@ -95,53 +120,8 @@ class UserController extends Controller
 
         $user->save();
 
-        return Redirect::back()->with('success', 'Registration Successful');
+        return Redirect::back()->with('success', 'Office Registration Successful');
 
-    }
-
-
-    public function store(Request $request) // stores register info to db, receives from createUser
-    {
-        // SHOULD BE EDITED
-        $validator = Validator::make($request->all(),[
-            // user_id is automatically generated
-            'username' => 'required',
-            'password' => 'required',
-            'user_role' => 'required',
-            'student_id' => 'required', 
-        ]);
-
-        if($validator->fails()){
-
-            $errors = $validator->errors(); // detects errors and stores in individual variables
-            $err = array(
-                // ff. stores detected errors for each field in ther $err array
-                'username' => $errors->first('username'),
-                'password' => $errors->first('password'),
-                'user_role' => $errors->first('user_role'),
-                'student_id' => $errors->first('student_id'),
-            );
-
-            return response()->json(array(
-                'message' => 'Cannot process request. Input errors.',
-                'errors' => $err
-            ), 422);
-
-        }
-
-        $user = new User;
-
-        $user->username = $request->input('username');
-        $user->password = Hash::make($request->input('password'));
-
-        $user->student_id = $request->input('student_id');
-        
-        $user->save();
-        
-        return response()->json(array(
-            'message' => 'Registration Successful',
-            'user' => $user
-        ), 201);
     }
 
     

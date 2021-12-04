@@ -72,7 +72,7 @@
                                             </tr>
                                         </thead>
 
-                                        <p class="text-center">Number of Visits: {{count(OfficeVisit::todayOfficeVisits(Carbon::today()->format('Y-m-d')))}}</p>
+                                        <p class="text-center">Number of Visits: {{count(OfficeVisit::todayOfficeVisits(Carbon::today()->format('Y-m-d'), Auth::user()->office_id))}}</p>
 
                                         <tbody>
                     

@@ -22,8 +22,8 @@ class OfficeVisit extends Model
         'time_in',
     ];
 
-    public static function todayOfficeVisits($date){
-        return OfficeVisit::select('id')->where('date', $date)->get();
+    public static function todayOfficeVisits($date, $office_id){
+        return OfficeVisit::select('id')->where('date', $date)->where('office_id', $office_id)->get();
     }
     
 }

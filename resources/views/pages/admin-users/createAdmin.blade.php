@@ -22,7 +22,12 @@
 
                 <div class="form-group">
                     {{Form::label('password', 'Password')}}
-                    {{Form::textarea('password', '', ['class' => "form-control", 'placeholder' => "Password"])}}
+                    {{ Form::password('password', array('id' => 'password', "class" => "form-control", "placeholder" => "Password")) }}
+                </div>
+
+                <div class="form-group">
+                    {{Form::label('confirm', 'Confirm Password')}}
+                    {{ Form::password('confirm', array('id' => 'password', "class" => "form-control", "placeholder" => "Confirm Password")) }}
                 </div>
 
                 {{Form::submit('Submit', ['class' => "btn btn-primary btn-lg pull-right"])}}
