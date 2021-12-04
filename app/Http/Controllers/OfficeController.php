@@ -16,6 +16,14 @@ use Illuminate\Support\Facades\Auth;
 class OfficeController extends Controller
 {
     
+
+    public function __construct()
+    {
+        $this->middleware('preventBackHistory');
+        $this->middleware('auth');
+    }
+    
+    
     public function index($building_num)
     {
         $offices = DB::table('office')->where('building_num',  '=', $building_num)->get();

@@ -18,6 +18,13 @@ class CampusVisitController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('preventBackHistory');
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $campus_visits = CampusVisit::all();

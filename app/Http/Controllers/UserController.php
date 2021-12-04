@@ -15,6 +15,14 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
     
+
+    public function __construct()
+    {
+        $this->middleware('preventBackHistory');
+        $this->middleware('auth');
+    }
+    
+    
     public function index() // show all users
     {
         $users = User::all();

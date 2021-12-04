@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('preventBackHistory');
+        $this->middleware('auth');
+    } 
     
     public function index()
     {

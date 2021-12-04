@@ -19,38 +19,32 @@ use App\Models\Model;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Auth::routes(); // from bootstrap install
+ // from bootstrap install
 
 // routes for views/pages display
-Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
+//Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
 
 // routes for user transactions
-Route::resources([
-    'users' => UserController::class,
-]);
-
-/*Route::resources([
-    'events' => EventController::class,
-]);
-
-Route::resources([
-    'attendance' => AttendanceController::class,
-]);*/
-
-Route::resources([
-    'admins' => AdminController::class,
-]);
-
-Route::resources([
-    'offices' => OfficeController::class,
-]);
-
-Route::resources([
-    'officeVisits' => OfficeVisitController::class,
-]);
-
-Route::post('/officeVisitsCode', [App\Http\Controllers\OfficeVisitController::class, 'storeCode'])->name('store-code');
-
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/attendance/{id}', [App\Http\Controllers\AttendanceController::class, 'createAttendance'])->name('create-attendance');
+Route::group(['middleware' => ['preventBackHistory']],function(){
+    Auth::routes();
+    Route::resources([
+        'users' => UserController::class,
+    ]);
+    
+    Route::resources([
+        'admins' => AdminController::class,
+    ]);
+    
+    Route::resources([
+        'offices' => OfficeController::class,
+    ]);
+    
+    Route::resources([
+        'officeVisits' => OfficeVisitController::class,
+    ]);
+    
+    Route::post('/officeVisitsCode', [App\Http\Controllers\OfficeVisitController::class, 'storeCode'])->name('store-code');
+    
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::post('/attendance/{id}', [App\Http\Controllers\AttendanceController::class, 'createAttendance'])->name('create-attendance');
+});

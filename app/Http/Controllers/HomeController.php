@@ -11,10 +11,14 @@ class HomeController extends Controller
      *
      * @return void
      */
+    
+
     public function __construct()
     {
+        $this->middleware('preventBackHistory');
         $this->middleware('auth');
     }
+    
 
     /**
      * Show the application dashboard.
