@@ -1,6 +1,6 @@
-@extends('layouts/header')
+@extends('layouts/view-users')
 
-@section('content')
+@section('view-content')
 <div class="au-card recent-report">
     <h5 class="title-2">Edit User</h5>
 </div>
@@ -16,8 +16,13 @@
                 </div>
 
                 <div class="form-group">
-                    {{Form::label('role_id', 'Role ID')}}
-                    {{Form::select('role_id', ['1', '2'], "", ['class' => "form-control"])}}
+                    {{Form::label('password', 'Password')}}
+                    {{ Form::password('password', array('id' => 'password', "class" => "form-control", "placeholder" => "Password")) }}
+                </div>
+
+                <div class="form-group">
+                    {{Form::label('confirm', 'Confirm Password')}}
+                    {{ Form::password('confirm', array('id' => 'password', "class" => "form-control", "placeholder" => "Confirm Password")) }}
                 </div>
 
                 {{Form::submit('Submit', ['class' => "btn btn-primary btn-lg pull-right"])}}

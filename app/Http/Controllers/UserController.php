@@ -53,7 +53,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(),[
             // user_id is automatically generated
             'name' => 'required|min:4',
-            'username' => 'required|min:4|unique:users',
+            'username' => 'required|min:4|unique:users,username',
             'password' => 'required|min:8',
             'confirm' => 'required_with:password|same:password', 
         ]);
@@ -97,7 +97,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(),[
             // user_id is automatically generated
             'name' => 'required',
-            'username' => 'required|min:4|unique:username',
+            'username' => 'required|min:4|unique:users,username',
             'password' => 'required|min:8',
             'confirm' => 'required_with:password|same:password', 
         ]);
@@ -144,13 +144,18 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        $this->validate($request, [
-            'username' => 'required',
-            'role_id' => 'required',
+        $validator = Validator::make($request->all(),[
+            'username' => 'required|min:4|unique:users,username,'.$id,
+            'password' => 'required|min:8',
+            'confirm' => 'required_with:password|same:password', 
         ]);
 
+        if($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
+
         $user->username = $request->input('username');
-        $user->role_id = $request->input('role_id');
+        $user->password = Hash::make($request->input('password'));
 
         $user->save();
         

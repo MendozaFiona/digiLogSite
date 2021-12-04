@@ -12,8 +12,9 @@
             <table class="table table-hover table-top-countries">
                 <thead class="thead-dark">
                     <tr>
-                        <th>User ID</th>
-                        <th class="text-right">Username</th>
+                        <th class="text-center">User ID</th>
+                        <th class="text-center">Admin ID</th>
+                        <th class="text-center">Username</th>
                     </tr>
                 </thead>
 
@@ -21,11 +22,16 @@
 
                     @if(count($users) > 1)
                         @foreach($users as $user)
-                            @if($user->role_id == 1)
-                                <tr onclick="window.location='/users/{{$user->id}}'">
-                                    <td>{{$user->id}}</td>
-                                    <td class="text-right">{{$user->username}}</td>
-                                </tr>
+                            @if ($user->username != Auth::user()->username) 
+                            
+                                @if($user->role_id == 1)
+                                    <tr onclick="window.location='/users/{{$user->id}}'">
+                                        <td class="text-center">{{$user->id}}</td>
+                                        <td class="text-center">{{$user->admin_id}}</td>
+                                        <td class="text-center">{{$user->username}}</td>
+                                    </tr>
+                                @endif
+
                             @endif
                             
                         @endforeach
