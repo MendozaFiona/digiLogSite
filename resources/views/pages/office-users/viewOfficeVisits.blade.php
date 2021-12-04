@@ -63,7 +63,7 @@
                         <div class="au-card-inner">
                             <div class="table-responsive">
                                 <table class="table table-hover table-top-countries">
-                                    @if(count($officeVisits) > 0)
+                                    @if(count(OfficeVisit::todayOfficeVisits(Carbon::today()->format('Y-m-d'), Auth::user()->office_id)) > 0)
                                         <thead class="thead-dark">
                                             <tr>
                                                 <th class="text-center">Visit ID</th>

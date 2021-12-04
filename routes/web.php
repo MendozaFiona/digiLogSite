@@ -4,6 +4,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OfficeController;
 use App\Http\Controllers\OfficeVisitController;
+use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Model;
 
@@ -38,6 +39,9 @@ Route::group(['middleware' => ['preventBackHistory']],function(){
 
         Route::post('/storeOfficeUser', [App\Http\Controllers\UserController::class, 'storeOfficeUser'])->name('store-office');
         Route::post('/storeAdminUser', [App\Http\Controllers\UserController::class, 'storeAdminUser'])->name('store-admin');
+
+        Route::get('/viewToday', [App\Http\Controllers\ViewController::class, 'viewToday'])->name('view-today');
+        Route::get('/viewAll', [App\Http\Controllers\ViewController::class, 'viewAll'])->name('view-all');
  
     });
     

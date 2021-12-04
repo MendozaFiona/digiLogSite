@@ -22,8 +22,8 @@
                             </div>
                             <div class="card-body">
                                 
-                                <a href="#" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">Today</a>
-                                <a href="#" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">All Visit</a>
+                                <a href="/viewToday" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">Today</a>
+                                <a href="/viewAll" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">All Visit</a>
                             </div>
                             
                         </div>                                               
