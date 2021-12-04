@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class OfficeVisitController extends Controller
 {
@@ -59,9 +60,17 @@ class OfficeVisitController extends Controller
         // FROM OFFICE SITE
         $nameID = $request->input('name');
 
+        $validator = Validator::make($request->all(),[
+            'name' => 'required|gt:0',
+        ]);
+
+        if($validator->fails()) {
+            return Redirect::back()->with('message', 'Please Select Name');
+        }
+
         $namesArray = CampusVisit::namesArray();
 
-        $name = $namesArray[$nameID];
+        $name = $namesArray[$nameID-1];
 
         $officeVisit = new OfficeVisit;
 
@@ -74,7 +83,7 @@ class OfficeVisitController extends Controller
 
         $officeVisit->save();
 
-        return back()->with('success', 'Office Visit Successfully Added');
+        return back()->with('message', 'Office Visit Successfully Added');
 
     }
 

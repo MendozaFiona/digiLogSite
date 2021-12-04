@@ -67,7 +67,7 @@
                                     
                                     {{Form::label('name', 'Visitor Name')}}
                                     {{Form::select('name',
-                                        CampusVisit::namesArray(),
+                                        ['Select Name', 'Visitor Names' => CampusVisit::namesArray()],
                                         ['class' => "form-control row w-100 center-block"])
                                     }}
                                     
@@ -76,9 +76,9 @@
 
                                 <div class="pt-2 pb-2"></div>
 
-                                @if(session()->has('success'))
+                                @if(session()->has('message'))
                                     <script>
-                                        alert('{{ session()->get('success') }}');
+                                        alert('{{ session()->get('message') }}');
                                     </script>
                                 @endif
                 

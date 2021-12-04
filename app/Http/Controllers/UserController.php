@@ -127,7 +127,6 @@ class UserController extends Controller
     
     public function show($id) //show a specific User
     {
-        // I DONT THINK WE NEED TO USE THIS
         $user = User::find($id);
         return view('users/show')->with('user', $user);
     }

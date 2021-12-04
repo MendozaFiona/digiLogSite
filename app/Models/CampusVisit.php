@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class CampusVisit extends Model
 {
@@ -44,6 +45,6 @@ class CampusVisit extends Model
 
     public static function namesArray()
     {
-        return CampusVisit::distinct()->pluck('name')->all();
+        return CampusVisit::distinct()->pluck('name')->where('date', Carbon::today()->format('Y-m-d'))->all();
     }
 }
