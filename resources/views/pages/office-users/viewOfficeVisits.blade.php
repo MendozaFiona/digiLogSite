@@ -16,17 +16,17 @@
                 <div class="col-lg-4">
                     <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">                   
                         <div class="au-task js-list-load">
-                            <div class="au-task__item au-task__item--danger" style = "background-color: #D5D8DB">
+                            <div class="au-task__item au-task__item--primary" style = "background-color: #D5D8DB">
                                 <div class="au-task__item-inner">
                                     <h5 class="task">
-                                        <a href="/">Scan QR Code</a>
+                                        <a href="/" style="color: #000;">Scan QR Code</a>
                                     </h5>
                                 </div>
                             </div>
-                            <div class="au-task__item au-task__item--danger" style = "background-color: #FDB417">
+                            <div class="au-task__item au-task__item--primary" style = "background-color: #FDB417">
                                 <div class="au-task__item-inner">
                                     <h5 class="task">
-                                        <a href="/officeVisits">View All Visits</a>
+                                        <a href="/officeVisits" style="color: #000;">View All Visits</a>
                                     </h5>
                                 </div>
                             </div>

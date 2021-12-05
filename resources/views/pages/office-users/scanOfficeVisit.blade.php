@@ -10,17 +10,17 @@
             <div class="col-lg-4">
                 <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">                   
                     <div class="au-task js-list-load">
-                        <div class="au-task__item au-task__item--danger" style = "background-color: #FDB417">
+                        <div class="au-task__item au-task__item--primary" style = "background-color: #FDB417">
                             <div class="au-task__item-inner">
                                 <h5 class="task">
-                                    <a href="/">Scan QR Code</a>
+                                    <a href="/" style="color: #000;">Scan QR Code</a>
                                 </h5>
                             </div>
                         </div>
-                        <div class="au-task__item au-task__item--danger" style = "background-color: #D5D8DB">
+                        <div class="au-task__item au-task__item--primary" style = "background-color: #D5D8DB">
                             <div class="au-task__item-inner">
                                 <h5 class="task">
-                                    <a href="/officeVisits">View All Visits</a>
+                                    <a href="/officeVisits" style="color: #000;">View All Visits</a>
                                 </h5>
                             </div>
                         </div>
@@ -46,10 +46,10 @@
                             <div class="row">
                                 <div class="col"></div>
                                 <div class="col">
-                                    <a id="endCam" class="btn btn-warning btn-lg btn-block" style = "background-color: #FDB417">TURN OFF CAMERA</a>
+                                    <a id="endCam" class="btn btn-warning btn-lg btn-block" style = "background-color: #FDB417; color: #000;">TURN OFF CAMERA</a>
                                 </div>
                                 <div class="col">
-                                    <a id="startCam" class="btn btn-primary btn-lg btn-block" style = "background-color: #191851">TURN ON CAMERA</a>
+                                    <a id="startCam" class="btn btn-primary btn-lg btn-block" style = "background-color: #191851; color: #FFF;">TURN ON CAMERA</a>
                                 </div>
                                 <div class="col"></div>
                             </div>

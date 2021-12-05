@@ -18,15 +18,6 @@
             @php
                 $this_date = request()->input('date');
             @endphp
-
-            <script>
-                $(function(){
-                    $('#datepick').datepicker({
-                        'format': 'yyyy-mm-dd',
-                        'autoclose': true,
-                    })
-                });
-            </script>
             
             {!! Form::open(array('url' => url('/viewAllVisits?date=').$this_date, 'method' => 'get')) !!}
             

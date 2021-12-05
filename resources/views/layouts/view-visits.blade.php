@@ -12,20 +12,20 @@
                     <div class="col-lg-4">
                         <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">                   
                             <div class="au-task js-list-load">
-                                <div class="au-task__item au-task__item--danger" style = "background-color: #FDB417">
+                                <div class="au-task__item au-task__item--primary" style = "background-color: #FDB417">
                                     <div class="au-task__item-inner">
                                         <h5 class="task">
-                                            <a href="/viewTodayVisits">View Today's Visits</a>
+                                            <a href="/viewTodayVisits" style="color: #000;">View Today's Visits</a>
                                         </h5>
                                     </div>
                                 </div>
-                                <div class="au-task__item au-task__item--danger" style = "background-color: #D5D8DB">
+                                <div class="au-task__item au-task__item--primary" style = "background-color: #D5D8DB">
                                     @php
                                         $this_date = Carbon::today()->format('Y-m-d');
                                     @endphp
                                     <div class="au-task__item-inner">
                                         <h5 class="task">
-                                            <a href="{{url('/viewAllVisits?date=').$this_date}}">View All Visits</a>
+                                            <a href="{{url('/viewAllVisits?date=').$this_date}}" style="color: #000;">View All Visits</a>
                                         </h5>
                                     </div>
                                 </div>
