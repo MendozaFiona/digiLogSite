@@ -7,7 +7,7 @@
 
 @section('visit-content')
 <div class="au-card recent-report">
-    <h5 class="title-2">{{ date('M d, Y', strtotime($visit->date)) }}</h5>
+    <h5 class="title-2">{{ date('F d, Y', strtotime($visit->date)) }}</h5>
 </div>
 
 

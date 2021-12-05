@@ -55,22 +55,12 @@
  
         </div>
 
-        <p id="datenow" class="text-center"></p>
+        @php
+            $displayDate = date('F d, Y', strtotime($selectedDate));
+            $displayWeekday = date("l", strtotime($selectedDate));
+        @endphp
 
-        <script>
-            n =  new Date();
-            y = n.getFullYear();
-            m = n.getMonth();
-            d = n.getDate();
-            w = n.getDay();
-
-            monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
-                'August', 'September', 'October', 'November', 'December'];
-
-            weekArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',
-                'Thursday', 'Friday', 'Saturday', 'Sunday']
-            document.getElementById("datenow").innerText = weekArray[w] + " | " + monthsArray[m] + " " + d + ", " + y;
-        </script>
+        <p class="text-center">{{$displayWeekday}} | {{$displayDate}}</p>
 
         <div class="au-card-inner">
             <div class="table-responsive">
