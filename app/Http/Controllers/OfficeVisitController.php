@@ -61,7 +61,7 @@ class OfficeVisitController extends Controller
         $nameID = $request->input('name');
 
         $validator = Validator::make($request->all(),[
-            'name' => 'required|gt:0',
+            'name' => 'required|gt:-1',
         ]);
 
         if($validator->fails()) {
@@ -70,7 +70,7 @@ class OfficeVisitController extends Controller
 
         $namesArray = CampusVisit::namesArray();
 
-        $name = $namesArray[$nameID-1];
+        $name = $namesArray[$nameID];
 
         $officeVisit = new OfficeVisit;
 

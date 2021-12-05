@@ -42,6 +42,8 @@ Route::group(['middleware' => ['preventBackHistory']],function(){
 
         Route::get('/viewToday', [App\Http\Controllers\ViewController::class, 'viewToday'])->name('view-today');
         Route::get('/viewAll', [App\Http\Controllers\ViewController::class, 'viewAll'])->name('view-all');
+
+        Route::get('/campusVisits/{id}', [App\Http\Controllers\ViewController::class, 'showVisit'])->name('show-visit');
  
     });
     

@@ -45,6 +45,7 @@ class CampusVisit extends Model
 
     public static function namesArray()
     {
-        return CampusVisit::distinct()->pluck('name')->where('date', Carbon::today()->format('Y-m-d'))->all();
+        $date_today = Carbon::today()->format('Y-m-d');
+        return CampusVisit::distinct()->where('date', $date_today)->pluck('name')->all();
     }
 }

@@ -67,7 +67,7 @@
                                     
                                     {{Form::label('name', 'Visitor Name')}}
                                     {{Form::select('name',
-                                        ['Select Name', 'Visitor Names' => CampusVisit::namesArray()],
+                                        [-1 => 'Select Name', 'Visitor Names' => CampusVisit::namesArray()],
                                         ['class' => "form-control row w-100 center-block"])
                                     }}
                                     

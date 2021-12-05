@@ -37,4 +37,10 @@ class ViewController extends Controller
         $campusVisits = $visits->all();
         return view('pages/admin-users/viewVisitsAll')->with('campusVisits', $campusVisits);
     }
+
+    public function showVisit($id)
+    {
+        $visit = CampusVisit::find($id);
+        return view('pages/admin-users/viewSpecificVisit')->with('visit', $visit);
+    }
 }
