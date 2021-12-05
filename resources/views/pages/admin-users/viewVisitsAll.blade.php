@@ -2,6 +2,7 @@
 
 @php
     use App\Models\CampusVisit;
+    use Carbon\Carbon; 
 @endphp
 
 @section('visit-content')
@@ -13,13 +14,29 @@
     <div class="au-card au-card-top-countries m-b-40">
 
         <div class="container text-left" style="background-color: #">
-            {!! Form::open(['action' => 'App\Http\Controllers\UserController@storeOfficeUser', 'method' => 'POST']) !!}
+
+            @php
+                $this_date = request()->input('date');
+            @endphp
+
+            <script>
+                $(function(){
+                    $('#datepick').datepicker({
+                        'format': 'yyyy-mm-dd',
+                        'autoclose': true,
+                    })
+                });
+            </script>
+            
+            {!! Form::open(array('url' => url('/viewAllVisits?date=').$this_date, 'method' => 'get')) !!}
+            
             <div class="row">
 
                 <div class="form-group">
                     <div class="input-group">
                         {{ Form::label('date', 'Pick Date: ', ['class' => 'pr-3'] ) }}
-                        {{ Form::text('date', null, ['class' => 'form-control datepicker pl-2',  'id' =>"datepick"]) }}
+                        {{ Form::text('date', $selectedDate, ['class' => 'form-control datepicker pl-2',  'id' => "datepick",
+                            'name' => "date", 'readonly' =>"readonly", ]) }}
                         <span class="input-group-append">
                             <span class="input-group-text bg-white">
                                 <i class="fa fa-calendar"></i>
@@ -30,11 +47,12 @@
 
 
                 <div class="text-left pl-4">
-                    {{Form::submit('Submit', ['class' => "btn btn-primary btn-lg pull-right"])}}
+                    {{Form::submit('Go', ['class' => "btn btn-primary btn-lg pull-right"])}}
                 </div>
 
             </div>    
-            {!! Form::close() !!}  
+            {!! Form::close() !!}
+ 
         </div>
 
         <p id="datenow" class="text-center"></p>
@@ -84,7 +102,7 @@
                             @endforeach
                         </tbody>
                     @else 
-                        <p class="text-center">No Visits to Display for Today</p>
+                        <p class="text-center">No Visits to Display for This Date</p>
                     @endif
     
                         

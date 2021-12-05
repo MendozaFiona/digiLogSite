@@ -40,8 +40,8 @@ Route::group(['middleware' => ['preventBackHistory']],function(){
         Route::post('/storeOfficeUser', [App\Http\Controllers\UserController::class, 'storeOfficeUser'])->name('store-office');
         Route::post('/storeAdminUser', [App\Http\Controllers\UserController::class, 'storeAdminUser'])->name('store-admin');
 
-        Route::get('/viewToday', [App\Http\Controllers\ViewController::class, 'viewToday'])->name('view-today');
-        Route::get('/viewAll', [App\Http\Controllers\ViewController::class, 'viewAll'])->name('view-all');
+        Route::get('/viewTodayVisits', [App\Http\Controllers\ViewController::class, 'viewToday'])->name('view-today');
+        Route::get('/viewAllVisits', [App\Http\Controllers\ViewController::class, 'viewAll'])->name('view-all');
 
         Route::get('/campusVisits/{id}', [App\Http\Controllers\ViewController::class, 'showVisit'])->name('show-visit');
  

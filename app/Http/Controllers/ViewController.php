@@ -29,13 +29,15 @@ class ViewController extends Controller
         return view('pages/admin-users/viewTodayVisits')->with('campusVisits', $campusVisits);
     }
 
-    public function viewAll()
+    public function viewAll(Request $request)
     {
 
-        // TO BE CHANGED
-        $visits = CampusVisit::where('date', Carbon::today()->format('Y-m-d'))->get();
+        $selectedDate = $request->query('date');
+        
+        $visits = CampusVisit::where('date', $selectedDate)->get();
+        
         $campusVisits = $visits->all();
-        return view('pages/admin-users/viewVisitsAll')->with('campusVisits', $campusVisits);
+        return view('pages/admin-users/viewVisitsAll')->with('campusVisits', $campusVisits)->with('selectedDate', $selectedDate);
     }
 
     public function showVisit($id)

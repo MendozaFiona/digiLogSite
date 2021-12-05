@@ -1,9 +1,11 @@
 @extends('layouts/header')
-
+@php
+   use Carbon\Carbon; 
+@endphp
 @section('content')
     <div class="main-content">
         <div class="section__content section__content--p30">
-            <div class="container-fluid">   
+            <div class="container-fluid">
 
                 <div class="row">
 
@@ -13,14 +15,17 @@
                                 <div class="au-task__item au-task__item--danger" style = "background-color: #FDB417">
                                     <div class="au-task__item-inner">
                                         <h5 class="task">
-                                            <a href="/viewToday">View Today's Visits</a>
+                                            <a href="/viewTodayVisits">View Today's Visits</a>
                                         </h5>
                                     </div>
                                 </div>
                                 <div class="au-task__item au-task__item--danger" style = "background-color: #D5D8DB">
+                                    @php
+                                        $this_date = Carbon::today()->format('Y-m-d');
+                                    @endphp
                                     <div class="au-task__item-inner">
                                         <h5 class="task">
-                                            <a href="/viewAll">View All Visits</a>
+                                            <a href="{{url('/viewAllVisits?date=').$this_date}}">View All Visits</a>
                                         </h5>
                                     </div>
                                 </div>

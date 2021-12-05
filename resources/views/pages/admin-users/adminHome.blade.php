@@ -1,3 +1,6 @@
+@php
+   use Carbon\Carbon; 
+@endphp
 <div class="section__content section__content--p30">
     <div class="container-fluid"> 
         <div class="row">
@@ -21,9 +24,13 @@
                                 View Visits
                             </div>
                             <div class="card-body">
+
+                                @php
+                                    $this_date = Carbon::today()->format('Y-m-d');
+                                @endphp
                                 
-                                <a href="/viewToday" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">Today</a>
-                                <a href="/viewAll" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">All Visit</a>
+                                <a href="/viewTodayVisits" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">Today</a>
+                                <a href="{{url('/viewAllVisits?date=').$this_date}}" class="btn btn-primary btn-lg btn-block" style = "background-color: #FDB417">All Visit</a>
                             </div>
                             
                         </div>                                               
