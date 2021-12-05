@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 // using CampusVisit model
 use App\Models\CampusVisit;
+use App\Models\Office;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -19,10 +20,24 @@ class CampusVisitController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
+    public function index($building_num)
     {
-        $this->middleware('preventBackHistory');
-        $this->middleware('auth'); // MAYBE THIS WILL PREVENT THE PHONE TO SUBMIT DATA
+        // FROM PHONE
+        $offices = DB::table('office')->where('building_num',  '=', $building_num)->get();
+        
+        if($offices == NULL){
+            return response()->json(array(
+                'message' => 'Building does not exist'
+            ), 404);
+        }
+
+        if($offices->isEmpty()){
+            return response()->json(array(
+                'message' => 'No offices found'
+            ), 204);
+        }
+
+        return $offices;
     }
     
 
@@ -30,8 +45,9 @@ class CampusVisitController extends Controller
     {
         // FROM PHONE
         $validator = Validator::make($request->all(),[
-            'name' => 'required',
+            'name' => 'required|min:3',
             'contact' => 'required|min:11|starts_with:09',
+            'purpose' => 'required',
         ]);
 
         if($validator->fails()){
@@ -40,6 +56,7 @@ class CampusVisitController extends Controller
             $err = array(
                 'name' => $errors->first('name'),
                 'contact' => $errors->first('contact'),
+                'purpose' => $errors->first('purpose'),
             );
 
             return response()->json(array(
@@ -59,6 +76,7 @@ class CampusVisitController extends Controller
 
         $campus_visit->name = $request->input('name');
         $campus_visit->contact = $request->input('contact');
+        $campus_visit->purpose = $request->input('purpose');
 
         if($v_type != null){
             $campus_visit->vehicle_type = $v_type;
