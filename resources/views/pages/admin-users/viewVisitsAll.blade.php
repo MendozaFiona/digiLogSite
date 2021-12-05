@@ -11,8 +11,34 @@
     </div>
 
     <div class="au-card au-card-top-countries m-b-40">
-        <p id="date" class="text-center"></p>
-        
+
+        <div class="container text-left" style="background-color: #">
+            {!! Form::open(['action' => 'App\Http\Controllers\UserController@storeOfficeUser', 'method' => 'POST']) !!}
+            <div class="row">
+
+                <div class="form-group">
+                    <div class="input-group">
+                        {{ Form::label('date', 'Pick Date: ', ['class' => 'pr-3'] ) }}
+                        {{ Form::text('date', null, ['class' => 'form-control datepicker pl-2',  'id' =>"datepick"]) }}
+                        <span class="input-group-append">
+                            <span class="input-group-text bg-white">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="text-left pl-4">
+                    {{Form::submit('Submit', ['class' => "btn btn-primary btn-lg pull-right"])}}
+                </div>
+
+            </div>    
+            {!! Form::close() !!}  
+        </div>
+
+        <p id="datenow" class="text-center"></p>
+
         <script>
             n =  new Date();
             y = n.getFullYear();
@@ -25,7 +51,7 @@
 
             weekArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',
                 'Thursday', 'Friday', 'Saturday', 'Sunday']
-            document.getElementById("date").innerText = weekArray[w] + " | " + monthsArray[m] + " " + d + ", " + y;
+            document.getElementById("datenow").innerText = weekArray[w] + " | " + monthsArray[m] + " " + d + ", " + y;
         </script>
 
         <div class="au-card-inner">
