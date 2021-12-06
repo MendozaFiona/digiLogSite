@@ -159,7 +159,7 @@ class UserController extends Controller
 
         $user->save();
         
-        dd(url()->previous());
+        dd(url(url()->previous())->previous());
         
         return redirect('/users')->with('success', 'User Updated');
     }
