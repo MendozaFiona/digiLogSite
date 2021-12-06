@@ -43,7 +43,7 @@ class OfficeVisitController extends Controller
         
         $officeVisit = new OfficeVisit;
 
-        $visitID = CampusVisit::select('id')->where('name', $name)->orderBy('time_in', 'desc')->first();
+        $visitID = CampusVisit::select('id')->where('name', $name)->where('date', Carbon::today()->format('Y-m-d'))->orderBy('time_in', 'desc')->first();
 
         if($visitID == null){
             return response()->json(array(
