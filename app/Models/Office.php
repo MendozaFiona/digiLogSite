@@ -26,7 +26,7 @@ class Office extends Authenticatable
 
     public static function officeStatus($officeID)
     {
-        $status = DB::table('office')->where('id', $officeID)->first()->status;
+        $status = Office::where('id', '20210000')->value('status');
 
         dd($status);
 
