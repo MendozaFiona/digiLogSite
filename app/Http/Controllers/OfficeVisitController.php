@@ -47,16 +47,16 @@ class OfficeVisitController extends Controller
 
         if($visitID == null){
             return redirect('/')->with('error', 'Invalid QR Code. User Not Found in Campus Database.');
+        } else {
+            $officeVisit->visit_id = $visitID->id;
+            $officeVisit->office_id = Auth::user()->office_id;
+            $officeVisit->date = date("Y/m/d");
+            $officeVisit->time_in = date("h:i:s");
+
+            $officeVisit->save();
+
+            return redirect('/')->with('success', 'Office Visit Successfully Added');
         }
-        
-        $officeVisit->visit_id = $visitID->id;
-        $officeVisit->office_id = Auth::user()->office_id;
-        $officeVisit->date = date("Y/m/d");
-        $officeVisit->time_in = date("h:i:s");
-
-        $officeVisit->save();
-
-        return redirect('/')->with('success', 'Office Visit Successfully Added');
     }
 
     public function store(Request $request)

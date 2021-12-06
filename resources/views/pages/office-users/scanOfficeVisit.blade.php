@@ -108,8 +108,12 @@
                                         name: name,
                                     },
                                     success: function(result){
-                                        alert(result);
-                                    }});
+                                        alert(result.responseJSON);
+                                    },
+                                    error: function(result){
+                                        alert('Invalid QR Code. User Not Found in Campus Database.');
+                                    }
+                                    });
                             });
 
                             Instascan.Camera.getCameras().then(function (cameras){
