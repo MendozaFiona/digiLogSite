@@ -4,7 +4,7 @@
 @endphp
 
 @php
-    dd(Office::officeStatus(Auth::user()->office_id));
+    dd(Auth::user()->office_id);
 @endphp
 
 <div class="container pt-3 pb-5">
