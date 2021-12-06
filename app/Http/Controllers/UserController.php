@@ -53,7 +53,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(),[
             // user_id is automatically generated
             'name' => 'required|min:4',
-            'username' => 'required|min:4|unique:users,username',
+            'username' => 'required|min:4|max:15|unique:users,username',
             'password' => 'required|min:8',
             'confirm' => 'required_with:password|same:password', 
         ]);
@@ -97,7 +97,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(),[
             // user_id is automatically generated
             'name' => 'required',
-            'username' => 'required|min:4|unique:users,username',
+            'username' => 'required|min:4|max:15|unique:users,username',
             'password' => 'required|min:8',
             'confirm' => 'required_with:password|same:password', 
         ]);
@@ -144,7 +144,7 @@ class UserController extends Controller
         $user = User::find($id);
 
         $validator = Validator::make($request->all(),[
-            'username' => 'required|min:4|unique:users,username,'.$id,
+            'username' => 'required|min:4|max:15|unique:users,username,'.$id,
             'password' => 'required|min:8',
             'confirm' => 'required_with:password|same:password', 
         ]);
