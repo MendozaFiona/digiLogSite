@@ -28,7 +28,7 @@ class Office extends Authenticatable
     {
         $status = Office::select('status')->where('id', $officeID)->first();
 
-        dd($status);
+        dd($officeID);
 
         $officeStatus = strval($status);
 
