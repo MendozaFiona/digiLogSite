@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Routing\UrlGenerator;
 
 class UserController extends Controller
 {
@@ -158,7 +159,7 @@ class UserController extends Controller
 
         $user->save();
         
-        dd($this->parent);
+        dd(url()->previous());
         
         return redirect('/users')->with('success', 'User Updated');
     }
