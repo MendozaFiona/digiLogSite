@@ -45,6 +45,8 @@ class OfficeVisitController extends Controller
 
         $visitID = CampusVisit::select('id')->where('name', $name)->orderBy('time_in', 'desc')->first();
 
+        dd($visitID);
+
         if($visitID == null){
             return redirect('/')->with('error', 'Invalid QR Code. User Not Found in Campus Database.');
         }
