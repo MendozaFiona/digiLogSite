@@ -158,7 +158,9 @@ class UserController extends Controller
 
         $user->save();
         
-        return redirect(session('links')[2])->with('success', 'User Updated');
+        dd($this->parent);
+        
+        return redirect('/users')->with('success', 'User Updated');
     }
 
     
