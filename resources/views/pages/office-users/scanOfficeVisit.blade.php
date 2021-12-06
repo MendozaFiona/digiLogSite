@@ -108,7 +108,7 @@
                                         name: name,
                                     },
                                     success: function(result){
-                                        alert(result.responseJSON);
+                                        alert('Office Visit Successfully Added');
                                     },
                                     error: function(result){
                                         alert('Invalid QR Code. User Not Found in Campus Database.');
