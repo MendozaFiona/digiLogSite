@@ -159,6 +159,8 @@ class UserController extends Controller
 
         $user->save();
 
+        dd($user->id);
+
         if($user->id == 1){
             return redirect('/admins')->with('success', 'User Updated');
         } else {
