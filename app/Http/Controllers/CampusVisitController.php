@@ -72,7 +72,7 @@ class CampusVisitController extends Controller
         $p_num = $request->input('plate_num');
 
         $date_now = date("Y/m/d");
-        $time_now = date("h:i:s");
+        $time_now = date("h:i:s A");
 
         $campus_visit->name = $request->input('name');
         $campus_visit->contact = $request->input('contact');

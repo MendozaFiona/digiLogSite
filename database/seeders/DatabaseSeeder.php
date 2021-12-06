@@ -349,7 +349,7 @@ class DatabaseSeeder extends Seeder
         );*/
 
         $date_now = date("Y/m/d");
-        $time_now = date("h:i:s");
+        $time_now = date("h:i:s A");
 
         // campusvisit
         DB::table('campusvisit')->insert(
@@ -362,7 +362,7 @@ class DatabaseSeeder extends Seeder
             ),
         );
 
-        $time_sec = date("h:i:s", (time() + 15));
+        $time_sec = date("h:i:s A", (time() + 15));
 
         DB::table('campusvisit')->insert(
             array(
@@ -374,7 +374,7 @@ class DatabaseSeeder extends Seeder
             ),
         );
 
-        $time_thr = date("h:i:s", (time() + 189));
+        $time_thr = date("h:i:s A", (time() + 189));
 
         DB::table('campusvisit')->insert(
             array(
@@ -386,7 +386,7 @@ class DatabaseSeeder extends Seeder
             ),
         );
 
-        $time_thr = date("h:i:s", (time() + 347));
+        $time_thr = date("h:i:s A", (time() + 347));
 
         DB::table('campusvisit')->insert(
             array(
@@ -398,7 +398,7 @@ class DatabaseSeeder extends Seeder
             ),
         );
 
-        $time_ov = date("h:i:s", (time() + 90));
+        $time_ov = date("h:i:s A", (time() + 90));
 
         // officevisit
         DB::table('officevisit')->insert(
