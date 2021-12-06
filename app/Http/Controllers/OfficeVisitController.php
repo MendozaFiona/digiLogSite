@@ -49,7 +49,7 @@ class OfficeVisitController extends Controller
             return response()->json(array(
                 'message' => 'Cannot process request. Input errors.',
                 'error' => '404 resource not found'
-            ),404);
+            ));
         } else {
             $officeVisit->visit_id = $visitID->id;
             $officeVisit->office_id = Auth::user()->office_id;
