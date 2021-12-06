@@ -3,6 +3,10 @@
    use Illuminate\Support\Facades\Auth;
 @endphp
 
+@php
+    dd(Office::officeStatus(Auth::user()->office_id));
+@endphp
+
 <div class="container pt-3 pb-5">
     <div id="status" class="text-center pb-5">Office Status: {{Office::officeStatus(Auth::user()->office_id)}}</div>
     <div class="row">
