@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use \Datetime;
 
 class DatabaseSeeder extends Seeder
 {
@@ -349,7 +350,7 @@ class DatabaseSeeder extends Seeder
         );*/
 
         $date_now = date("Y/m/d");
-        $time_now = date("H:i:s");
+        $time_now = new DateTime("H:i:s");
 
         // campusvisit
         DB::table('campusvisit')->insert(
@@ -362,7 +363,7 @@ class DatabaseSeeder extends Seeder
             ),
         );
 
-        $time_sec = date("H:i:s", (time() + 15));
+        $time_sec = new DateTime("H:i:s", (time() + 15));
 
         DB::table('campusvisit')->insert(
             array(
@@ -374,7 +375,7 @@ class DatabaseSeeder extends Seeder
             ),
         );
 
-        $time_thr = date("H:i:s", (time() + 189));
+        $time_thr = new DateTime("H:i:s", (time() + 189));
 
         DB::table('campusvisit')->insert(
             array(
@@ -386,7 +387,7 @@ class DatabaseSeeder extends Seeder
             ),
         );
 
-        $time_thr = date("H:i:s", (time() + 347));
+        $time_thr = new DateTime("H:i:s", (time() + 347));
 
         DB::table('campusvisit')->insert(
             array(
@@ -398,7 +399,7 @@ class DatabaseSeeder extends Seeder
             ),
         );
 
-        $time_ov = date("H:i:s", (time() + 43222));
+        $time_ov = new DateTime("H:i:s", (time() + 43222));
 
         // officevisit
         DB::table('officevisit')->insert(

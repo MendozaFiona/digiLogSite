@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Carbon\Carbon;
+use \Datetime;
 
 class OfficeVisitController extends Controller
 {
@@ -55,7 +56,7 @@ class OfficeVisitController extends Controller
             $officeVisit->visit_id = $visitID->id;
             $officeVisit->office_id = Auth::user()->office_id;
             $officeVisit->date = date("Y/m/d");
-            $officeVisit->time_in = date("H:i:s");
+            $officeVisit->time_in = new DateTime("H:i:s");
 
             $officeVisit->save();
 
