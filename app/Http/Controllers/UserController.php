@@ -158,8 +158,10 @@ class UserController extends Controller
         $user->password = Hash::make($request->input('password'));
 
         $user->save();
+
+        $prev_url = url()->previous();
         
-        dd(url(url()->previous())->previous());
+        dd(url(url($prev_url))->previous());
         
         return redirect('/users')->with('success', 'User Updated');
     }
