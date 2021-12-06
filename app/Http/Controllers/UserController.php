@@ -173,6 +173,10 @@ class UserController extends Controller
 
         $user->delete();
 
-        return redirect('/users')->with('success', 'User Deleted');
+        if($user->role_id == 1){
+            return redirect('/admins')->with('success', 'User Updated');
+        } else {
+            return redirect('/users')->with('success', 'User Updated');
+        }
     }
 }
