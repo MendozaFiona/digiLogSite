@@ -108,7 +108,7 @@
                                         name: name,
                                     },
                                     success: function(result){
-                                        alert('Office Visit Successfully Added');
+                                        alert(result);
                                     }});
                             });
 
