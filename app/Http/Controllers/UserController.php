@@ -159,11 +159,11 @@ class UserController extends Controller
 
         $user->save();
 
-        $prev_url = url()->previous();
-        
-        dd(url(url($prev_url))->previous());
-        
-        return redirect('/users')->with('success', 'User Updated');
+        if($user->id == 1){
+            return redirect('/admins')->with('success', 'User Updated');
+        } else {
+            return redirect('/users')->with('success', 'User Updated');
+        }
     }
 
     
