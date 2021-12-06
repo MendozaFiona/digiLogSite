@@ -339,14 +339,14 @@ class DatabaseSeeder extends Seeder
         $office_id = $full_year * 10000;
 
         // office
-        DB::table('users')->insert(
+        /*DB::table('users')->insert(
             array(
                 'office_id' => $office_id,
                 'username' => '003001ASO',
                 'password' => Hash::make('asopassword'),
                 'role_id' => 2,
             ),
-        );
+        );*/
 
         $date_now = date("Y/m/d");
         $time_now = date("h:i:s");
