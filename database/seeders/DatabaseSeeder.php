@@ -399,12 +399,13 @@ class DatabaseSeeder extends Seeder
         );
 
         $time_ov = date("H:i", (time() + 43222));
+        $off_id = Office::select('id')->where('name', 'Admission and Scholarship Office')->first();
 
         // officevisit
         DB::table('officevisit')->insert(
             array(
                 'visit_id' => '602021000',
-                'office_id' => '20210000',
+                'office_id' => $off_id,
                 'date' => $date_now,
                 'time_in' => $time_ov,
             ),
