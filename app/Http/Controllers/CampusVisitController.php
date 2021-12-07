@@ -11,7 +11,6 @@ use App\Models\Office;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-use \Datetime;
 
 class CampusVisitController extends Controller
 {
@@ -73,7 +72,7 @@ class CampusVisitController extends Controller
         $p_num = $request->input('plate_num');
 
         $date_now = date("Y/m/d");
-        $time_now = new DateTime("H:i:s");
+        $time_now = date("H:i");
 
         $campus_visit->name = $request->input('name');
         $campus_visit->contact = $request->input('contact');
