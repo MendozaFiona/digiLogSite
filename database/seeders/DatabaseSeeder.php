@@ -406,7 +406,7 @@ class DatabaseSeeder extends Seeder
                 'visit_id' => '602021000',
                 'office_id' => '20210000',
                 'date' => $date_now,
-                'time_in' => $time_ov,
+                'time_in' => '22:09:22',
             ),
         );
 
