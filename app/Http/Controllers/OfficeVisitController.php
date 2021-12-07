@@ -55,7 +55,7 @@ class OfficeVisitController extends Controller
             $officeVisit->visit_id = $visitID->id;
             $officeVisit->office_id = Auth::user()->office_id;
             $officeVisit->date = date("Y/m/d");
-            $officeVisit->time_in = date("H:i");
+            $officeVisit->time_in = date("H:i:s");
 
             $officeVisit->save();
 
@@ -87,7 +87,7 @@ class OfficeVisitController extends Controller
         $officeVisit->visit_id = $visitID->id;
         $officeVisit->office_id = Auth::user()->office_id;
         $officeVisit->date = date("Y/m/d");
-        $officeVisit->time_in = date("H:i");
+        $officeVisit->time_in = date("H:i:s");
 
         $officeVisit->save();
 
