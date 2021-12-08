@@ -61,10 +61,11 @@
                     @if(count($campusVisits) > 0)
                         <thead class="thead-dark">
                             <tr>
-                                <th class="text-center">Visit ID</th>
                                 <th class="text-center">Name</th>
+                                <th class="text-center">Contact</th>
                                 <th class="text-center">Visit Date</th>
                                 <th class="text-center">Time In</th>
+                                <th class="text-center">Category</th>
                             </tr>
                         </thead>
 
@@ -74,14 +75,20 @@
     
                         
                             @foreach($campusVisits as $campusVisit)
-                            <!--include if(date == today here)-->
+                                @php
+                                    if($campusVisit->plate_num == null){
+                                        $category = "On Foot";
+                                    } else {
+                                        $category = "With Vehicle";
+                                    }
+                                @endphp
                             
                                         <tr onclick="window.location='/campusVisits/{{$campusVisit->id}}'">
-                                            <td class="text-center">{{$campusVisit->id}}</td>
-                                            <td class="text-center">{{ CampusVisit::name($campusVisit->id) }} </td>
+                                            <td class="text-center">{{$campusVisit->name}}</td>
+                                            <td class="text-center">{{ $campusVisit->contact }} </td>
                                             <td class="text-center">{{$campusVisit->date}}</td>
                                             <td class="text-center">{{$campusVisit->time_in}}</td>
-                                            <!--access db here to display other details such as name, time in, etc.-->
+                                            <td class="text-center">{{$category}}</td>
                                         </tr>
 
                             @endforeach

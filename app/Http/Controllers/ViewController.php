@@ -36,10 +36,9 @@ class ViewController extends Controller
         $dateArray = explode(" - ", $dateRange);
 
         $startDate = date($dateArray[0]);
-        $startTest = date("2021-12-07");
         $endDate = date($dateArray[1]);
         
-        $visits = CampusVisit::whereBetween('date', [$startTest, $endDate])->get();
+        $visits = CampusVisit::whereBetween('date', [$startDate, $endDate])->get();
         
         $campusVisits = $visits->all();
         return view('pages/admin-users/viewVisitsAll')->with('campusVisits', $campusVisits)->with('startDate', $startDate)
