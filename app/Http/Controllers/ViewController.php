@@ -36,9 +36,10 @@ class ViewController extends Controller
         $dateArray = explode(" - ", $dateRange);
 
         $startDate = date($dateArray[0]);
+        $startTest = date("2021-12-07");
         $endDate = date($dateArray[1]);
         
-        $visits = CampusVisit::where('date', [$startDate, $endDate])->get();
+        $visits = CampusVisit::where('date', [$startTest, $endDate])->get();
         
         $campusVisits = $visits->all();
         dd($campusVisits);
