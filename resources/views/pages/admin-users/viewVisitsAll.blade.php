@@ -56,13 +56,13 @@
             $endWeekday = date("l", strtotime($endDate));
         @endphp
 
-        <div id="test">
+        <div id="pdfprint">
 
             <p class="text-center">{{$startWeekday}} | {{$displayStart}} : {{$endWeekday}} | {{$displayEnd}}</p>
 
             <div class="au-card-inner">
                 <div class="table-responsive">
-                    <table class="table table-hover table-top-countries">
+                    <table id="tblData" class="table table-hover table-top-countries">
                         @if(count($campusVisits) > 0)
                             <thead class="thead-dark">
                                 <tr>
@@ -115,14 +115,42 @@
 
         <script>
             function printDiv() {
-                var divContents = document.getElementById("test").innerHTML;
+                var divContents = document.getElementById("pdfprint").innerHTML;
                 var a = window.open('', '', 'height=500, width=500');
                 a.document.write('<html>');
-                a.document.write('<body > <h1>Div contents are <br>');
+                a.document.write('<body >');
                 a.document.write(divContents);
                 a.document.write('</body></html>');
                 a.document.close();
                 a.print();
+            }
+        </script>
+
+        <script>
+            function exportTableToExcel(tableID, filename = ''){
+                var downloadLink;
+                var dataType = 'application/vnd.ms-excel';
+                var tableSelect = document.getElementById(tableID);
+                var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+                
+                filename = filename?filename+'.xls':'excel_data.xls';
+                
+                downloadLink = document.createElement("a");
+                
+                document.body.appendChild(downloadLink);
+                
+                if(navigator.msSaveOrOpenBlob){
+                    var blob = new Blob(['\ufeff', tableHTML], {
+                        type: dataType
+                    });
+                    navigator.msSaveOrOpenBlob( blob, filename);
+                }else{
+                    downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+                
+                    downloadLink.download = filename;
+
+                    downloadLink.click();
+                }
             }
         </script>
 
