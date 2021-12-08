@@ -35,11 +35,12 @@ class ViewController extends Controller
 
         $dateArray = explode(" - ", $dateRange);
 
-        dd($dateArray);
+        $startDate = date($dateArray[0]);
+        $endDate = date($dateArray[1]);
 
         $selectedDate = $request->query('date');
         
-        $visits = CampusVisit::where('date', $selectedDate)->get();
+        $visits = CampusVisit::where('date', [$startDate, $endDate])->get();
         
         $campusVisits = $visits->all();
         return view('pages/admin-users/viewVisitsAll')->with('campusVisits', $campusVisits)->with('selectedDate', $selectedDate);
