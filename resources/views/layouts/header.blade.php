@@ -7,26 +7,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>USTP Digital Logbook</title>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap-datepicker.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.css">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    
-    <script>
-        $(function(){
-            $('#datepick').datepicker({
-                'format': 'yyyy-mm-dd',
-                'autoclose': true,
-                'minDate': new Date(2014, 10, 30),
-                'maxDate': new Date(2015, 2, 5),
-                'setDate': new Date(2014, 10, 30)
-            })
-        });
-    </script>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <link href="/css/font-face.css" rel="stylesheet" media="all">
     <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
@@ -66,10 +53,27 @@
     
         
         @yield('content')
-    
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-datepicker.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="/vendor/animsition/animsition.min.js"></script>
     <script src="/js/main.js"></script>
+
+    <script>
+        $(function(){
+            $('#datepick').daterangepicker({
+                //'format': 'yyyy-mm-dd',
+                //'autoclose': true,
+                autoApply: true,
+                startDate: '04/12/2019',
+                endDate: '04/12/2019',
+            })
+        });
+    </script>
     
 
 </body>
