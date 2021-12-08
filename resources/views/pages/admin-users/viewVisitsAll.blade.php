@@ -47,6 +47,7 @@
         </div>
         <div class="container text-right">
             <input type="button" value="click" onclick="printDiv()">
+            <button onclick="exportTableToExcel('tblData')">Export Table Data To Excel File</button>
         </div>
 
         @php
