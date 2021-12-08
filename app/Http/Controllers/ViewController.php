@@ -39,7 +39,7 @@ class ViewController extends Controller
         $startTest = date("2021-12-07");
         $endDate = date($dateArray[1]);
         
-        $visits = CampusVisit::where('date', [$startTest, $endDate])->get();
+        $visits = CampusVisit::whereBetween('date', [$startTest, $endDate])->get();
         
         $campusVisits = $visits->all();
         dd($campusVisits);
