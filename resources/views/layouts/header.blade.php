@@ -62,6 +62,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="/vendor/animsition/animsition.min.js"></script>
     <script src="/js/main.js"></script>
+    
+    @php
+        use Carbon\Carbon;
+    @endphp
 
     <script>
         $(function(){
@@ -69,8 +73,11 @@
                 //'format': 'yyyy-mm-dd',
                 //'autoclose': true,
                 autoApply: true,
-                startDate: '04/12/2019',
-                endDate: '04/12/2019',
+                startDate: {{Carbon::today()->format('Y-m-d')}},
+                endDate: {{Carbon::today()->format('Y-m-d')}},
+                locale: {
+                    format: 'yyyy-mm-dd',
+                }
             })
         });
     </script>
