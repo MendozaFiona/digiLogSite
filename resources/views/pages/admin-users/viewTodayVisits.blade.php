@@ -49,20 +49,15 @@
     
                         
                             @foreach($campusVisits as $campusVisit)
-                            @php
-                                if($campusVisit->plate_num == null){
-                                    $category = "On Foot";
-                                } else {
-                                    $category = "With Vehicle";
-                                }
-                            @endphp
-                            @php
-                                if($campusVisit->plate_num == null){
-                                    $platenum = "N/A"
-                                } else {
-                                    $platenum = $campusVisit->plate_num;
-                                }
-                            @endphp
+                                @php
+                                    if($campusVisit->plate_num == null){
+                                        $category = "On Foot";
+                                        $platenum = "N/A";
+                                    } else {
+                                        $category = "With Vehicle";
+                                        $platenum = $campusVisit->plate_num;
+                                    }
+                                @endphp
                             
                                 <tr onclick="window.location='/campusVisits/{{$campusVisit->id}}'">
                                     <td class="text-center">{{$campusVisit->name}}</td>
