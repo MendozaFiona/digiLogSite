@@ -130,7 +130,7 @@
         <script>
             function exportTableToExcel(){
                 var table2excel = new Table2Excel();
-                table2excel.export(document.querySelectorAll("tblData"));
+                table2excel.export(document.querySelectorAll("#tblData"));
             }
         </script>
 
