@@ -73,10 +73,10 @@
                 //'format': 'yyyy-mm-dd',
                 //'autoclose': true,
                 autoApply: true,
-                startDate: {{Carbon::today()->format('Y-m-d')}},
-                endDate: {{Carbon::today()->format('Y-m-d')}},
+                //startDate: {{Carbon::today()->format('Y-m-d')}},
+                //endDate: {{Carbon::today()->format('Y-m-d')}},
                 locale: {
-                    format: 'yyyy-mm-dd',
+                    format: 'YYYY-MM-DD',
                 }
             })
         });
