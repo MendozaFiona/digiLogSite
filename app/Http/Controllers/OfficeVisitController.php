@@ -39,7 +39,9 @@ class OfficeVisitController extends Controller
         $startDate = date($dateArray[0]);
         $endDate = date($dateArray[1]);
 
-        $visits = OfficeVisit::whereBetween('date', [$startDate, $endDate])->get();
+        $officeID = Auth::user()->office_id;
+
+        $visits = OfficeVisit::where('office_id', $officeID)->whereBetween('date', [$startDate, $endDate])->get();
         $officeVisits = $visits->all();
 
         return view('pages/office-users/viewOfficeVisits')->with('officeVisits', $officeVisits)->with('startDate', $startDate)

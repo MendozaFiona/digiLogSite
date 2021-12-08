@@ -1,6 +1,7 @@
 @php
    use App\Models\CampusVisit; 
    use App\Models\OfficeVisit; 
+   use App\Models\Office; 
    use Carbon\Carbon;
 @endphp
 
@@ -46,54 +47,74 @@
                 
                 
                     <div class="au-card au-card-top-countries m-b-40">
-                        <p id="date" class="text-center"></p>
-                        
-                        <script>
-                            n =  new Date();
-                            y = n.getFullYear();
-                            m = n.getMonth();
-                            d = n.getDate();
-                            w = n.getDay();
+                        <div class="container text-left" style="background-color: #">
 
-                            monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
-                                'August', 'September', 'October', 'November', 'December'];
+                            @php
+                                $this_date = request()->input('date');
+                            @endphp
+                            
+                            {!! Form::open(array('url' => url('/officeVisits?date=').$this_date, 'method' => 'get')) !!}
+                            
+                            <div class="row">
+                
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        {{ Form::label('date', 'Pick Date: ', ['class' => 'pr-3'] ) }}
+                                        {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datepick",
+                                            'name' => "date", 'readonly' =>"readonly", ]) }}
+                                        <span class="input-group-append">
+                                            <span class="input-group-text bg-white">
+                                                <i class="fa fa-calendar"></i>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                
+                
+                                <div class="text-left pl-4">
+                                    {{Form::submit('Go', ['class' => "btn btn-primary btn-lg pull-right"])}}
+                                </div>
+                
+                            </div>    
+                            {!! Form::close() !!}
+                 
+                        </div>
 
-                            weekArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',
-                                'Thursday', 'Friday', 'Saturday', 'Sunday']
-                            document.getElementById("date").innerText = weekArray[w] + " | " + monthsArray[m] + " " + d + ", " + y;
-                        </script>
+                        @php
+                            $displayStart = date('F d, Y', strtotime($startDate));
+                            $displayEnd = date('F d, Y', strtotime($endDate));
+                            $startWeekday = date("l", strtotime($startDate));
+                            $endWeekday = date("l", strtotime($endDate));
+                        @endphp
+
+                        <p class="text-center">{{$startWeekday}} | {{$displayStart}} : {{$endWeekday}} | {{$displayEnd}}</p>
 
                         <div class="au-card-inner">
                             <div class="table-responsive">
                                 <table class="table table-hover table-top-countries">
-                                    @if(count(OfficeVisit::todayOfficeVisits(Carbon::today()->format('Y-m-d'), Auth::user()->office_id)) > 0)
+                                    @if(count($officeVisits) > 0)
                                         <thead class="thead-dark">
                                             <tr>
+                                                <th class="text-center">Office</th>
                                                 <th class="text-center">Visit ID</th>
                                                 <th class="text-center">Name</th>
                                                 <th class="text-center">Time In</th>
                                             </tr>
                                         </thead>
 
-                                        <p class="text-center">Number of Visits: {{count(OfficeVisit::todayOfficeVisits(Carbon::today()->format('Y-m-d'), Auth::user()->office_id))}}</p>
+                                        <p class="text-center">Number of Visits: {{count($officeVisits)}}</p>
 
                                         <tbody>
                     
                                         
                                             @foreach($officeVisits as $officeVisit)
-                                            <!--include if(date == today here)-->
-                                                @if($officeVisit->date ==  Carbon::today()->format('Y-m-d'))
-                                            
-                                                    @if($officeVisit->office_id == Auth::user()->office_id)
                                                         <tr>
+                                                            <td class="text-center">{{ Office::office($officeVisit->office_id) }}</td>
                                                             <td class="text-center">{{$officeVisit->id}}</td>
                                                             <td class="text-center">{{ CampusVisit::name($officeVisit->visit_id) }} </td>
                                                             <td class="text-center">{{$officeVisit->time_in}}</td>
                                                             <!--access db here to display other details such as name, time in, etc.-->
                                                         </tr>
-                                                    @endif
-
-                                                @endif
                                             @endforeach
                                         </tbody>
                                     @else 
