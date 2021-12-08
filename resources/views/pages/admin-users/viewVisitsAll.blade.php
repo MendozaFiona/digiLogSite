@@ -47,10 +47,10 @@
         </div>
 
         @php
-            $displayStart = date('F d, Y', $startDate);
-            $displayEnd = date('F d, Y', $endDate);
-            $startWeekday = date("l", $startDate);
-            $endWeekday = date("l", $endDate);
+            $displayStart = date('F d, Y', strtotime($startDate));
+            $displayEnd = date('F d, Y', strtotime($endDate));
+            $startWeekday = date("l", strtotime($startDate));
+            $endWeekday = date("l", strtotime($endDate));
         @endphp
 
         <p class="text-center">{{$startWeekday}} | {{$displayStart}} : {{$endWeekday}} | {{$displayEnd}}</p>
