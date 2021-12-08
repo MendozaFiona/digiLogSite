@@ -18,6 +18,9 @@
             $('#datepick').datepicker({
                 'format': 'yyyy-mm-dd',
                 'autoclose': true,
+                'minDate': new Date(2014, 10, 30),
+                'maxDate': new Date(2015, 2, 5),
+                'setDate': new Date(2014, 10, 30)
             })
         });
     </script>
