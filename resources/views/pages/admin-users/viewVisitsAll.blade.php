@@ -79,7 +79,7 @@
                                 @php
                                     if($campusVisit->plate_num == null){
                                         $category = "On Foot";
-                                        $platenum = "N/A"
+                                        $platenum = "N/A";
                                     } else {
                                         $category = "With Vehicle";
                                         $platenum = $campusVisit->plate_num;
