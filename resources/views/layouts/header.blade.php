@@ -74,6 +74,26 @@
             })
         });
     </script>
+
+    <script>
+        function printDiv() {
+            var divContents = document.getElementById("pdfprint").innerHTML;
+            var a = window.open('', '', 'height=500, width=500');
+            a.document.write('<html>');
+            a.document.write('<body >');
+            a.document.write(divContents);
+            a.document.write('</body></html>');
+            a.document.close();
+            a.print();
+        }
+    </script>
+
+    <script>
+        function exportTableToExcel(){
+            var table2excel = new Table2Excel();
+            table2excel.export(document.querySelectorAll("#tblData"));
+        }
+    </script>
     
 
 </body>

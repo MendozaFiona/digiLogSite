@@ -13,41 +13,47 @@
 
     <div class="au-card au-card-top-countries m-b-40">
 
-        <div class="container text-left" style="background-color: #">
+        <div class="container" style="background-color: #">
 
             @php
                 $this_date = request()->input('date');
             @endphp
             
-            {!! Form::open(array('url' => url('/viewAllVisits?date=').$this_date, 'method' => 'get')) !!}
             
             <div class="row">
+                <div class="container text-left">
+                    {!! Form::open(array('url' => url('/viewAllVisits?date=').$this_date, 'method' => 'get')) !!}
+                        <div class="form-group">
+                            <div class="input-group">
+                                {{ Form::label('date', 'Pick Date: ', ['class' => 'pr-3'] ) }}
+                                {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datepick",
+                                    'name' => "date", 'readonly' =>"readonly", ]) }}
+                                <span class="input-group-append">
+                                    <span class="input-group-text bg-white">
+                                        <i class="fa fa-calendar"></i>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <div class="input-group">
-                        {{ Form::label('date', 'Pick Date: ', ['class' => 'pr-3'] ) }}
-                        {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datepick",
-                            'name' => "date", 'readonly' =>"readonly", ]) }}
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
-                            </span>
-                        </span>
+                        <div class="text-left pl-4">
+                            {{Form::submit('Go', ['class' => "btn btn-primary btn-lg pull-right"])}}
+                        </div>
+
+                    {!! Form::close() !!}
+                </div>
+
+                <div class="container text-right">
+                    <div class="col">
+                        <input type="button" class="btn btn-secondary" value="Print Page" onclick="printDiv()">
+                    </div>
+                    <div class="col">
+                        <input type="button" class="btn btn-secondary" value="Export Table to Sheet" onclick="exportTableToExcel()">
                     </div>
                 </div>
 
-
-                <div class="text-left pl-4">
-                    {{Form::submit('Go', ['class' => "btn btn-primary btn-lg pull-right"])}}
-                </div>
-
             </div>    
-            {!! Form::close() !!}
  
-        </div>
-        <div class="container text-right">
-            <input type="button" value="click" onclick="printDiv()">
-            <input type="button" value="excel" onclick="exportTableToExcel('tblData')">
         </div>
 
         @php
@@ -113,26 +119,6 @@
                 </div>
             </div>
         </div>
-
-        <script>
-            function printDiv() {
-                var divContents = document.getElementById("pdfprint").innerHTML;
-                var a = window.open('', '', 'height=500, width=500');
-                a.document.write('<html>');
-                a.document.write('<body >');
-                a.document.write(divContents);
-                a.document.write('</body></html>');
-                a.document.close();
-                a.print();
-            }
-        </script>
-
-        <script>
-            function exportTableToExcel(){
-                var table2excel = new Table2Excel();
-                table2excel.export(document.querySelectorAll("#tblData"));
-            }
-        </script>
 
     </div>
 
