@@ -52,7 +52,7 @@
             <div class="col">
                 <div class="container text-right">
                     <div class="col">
-                        <input type="button" class="btn btn-secondary" value="Print Page" onclick="printDiv()">
+                        <input type="button" class="btn btn-secondary" value="Save Table as PDF" onclick="printDiv()">
                     </div>
                     <div class="col">
                         <input type="button" class="btn btn-secondary" value="Export Table to Sheet" onclick="exportTableToExcel()">
