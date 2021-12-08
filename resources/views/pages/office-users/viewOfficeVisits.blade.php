@@ -24,9 +24,12 @@
                                 </div>
                             </div>
                             <div class="au-task__item au-task__item--primary" style = "background-color: #FDB417">
+                                @php
+                                    $this_date = Carbon::today()->format('Y-m-d');
+                                @endphp
                                 <div class="au-task__item-inner">
                                     <h5 class="task">
-                                        <a href="/officeVisits" style="color: #000;">View All Visits</a>
+                                        <a href="{{url('/officeVisits?date=').$this_date."+-+".$this_date}}" style="color: #000;">View All Visits</a>
                                     </h5>
                                 </div>
                             </div>
@@ -82,7 +85,7 @@
                                                 @if($officeVisit->date ==  Carbon::today()->format('Y-m-d'))
                                             
                                                     @if($officeVisit->office_id == Auth::user()->office_id)
-                                                        <tr onclick="window.location='/officeVisits/{{$officeVisit->id}}'">
+                                                        <tr>
                                                             <td class="text-center">{{$officeVisit->id}}</td>
                                                             <td class="text-center">{{ CampusVisit::name($officeVisit->visit_id) }} </td>
                                                             <td class="text-center">{{$officeVisit->time_in}}</td>

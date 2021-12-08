@@ -41,6 +41,7 @@ class ViewController extends Controller
         $visits = CampusVisit::whereBetween('date', [$startDate, $endDate])->get();
         
         $campusVisits = $visits->all();
+        
         return view('pages/admin-users/viewVisitsAll')->with('campusVisits', $campusVisits)->with('startDate', $startDate)
             ->with('endDate', $endDate);
     }

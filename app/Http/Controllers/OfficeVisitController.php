@@ -30,11 +30,20 @@ class OfficeVisitController extends Controller
         $this->middleware('auth');
     }
     
-    public function index()
+    public function index(Request $request)
     {
-        // FROM OFFICE SITE: VIEW
-        $officeVisits = OfficeVisit::all();
-        return view('pages/office-users/viewOfficeVisits')->with('officeVisits', $officeVisits);
+        $dateRange = $request->query('date');
+
+        $dateArray = explode(" - ", $dateRange);
+
+        $startDate = date($dateArray[0]);
+        $endDate = date($dateArray[1]);
+
+        $visits = OfficeVisit::whereBetween('date', [$startDate, $endDate])->get();
+        $officeVisits = $visits->all();
+
+        return view('pages/office-users/viewOfficeVisits')->with('officeVisits', $officeVisits)->with('startDate', $startDate)
+            ->with('endDate', $endDate);
     }
 
     public function storeCode(Request $request)
@@ -97,7 +106,7 @@ class OfficeVisitController extends Controller
 
     public function show($id)
     {
-        // FROM OFFICE SITE
+        // FROM OFFICE SITE - removed
         $visit = OfficeVisit::where('id', $id)->first();
         return view('pages/office-users/viewSpecificVisit')->with('visit', $visit);
     }

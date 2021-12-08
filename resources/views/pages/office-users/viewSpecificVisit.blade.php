@@ -2,7 +2,9 @@
     @php
         use App\Models\CampusVisit;
         use App\Models\Office;
+        // this might not be used anymore
     @endphp
+    
 @section('content')
 <div class="main-content">
     <div class="section__content section__content--p30">
