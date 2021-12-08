@@ -13,46 +13,48 @@
 
     <div class="au-card au-card-top-countries m-b-40">
 
-        <div class="container text-left" style="background-color: #">
+        <div class="row">
+            <div class="container text-left" style="background-color: #">
 
-            @php
-                $this_date = request()->input('date');
-            @endphp
-            
-            {!! Form::open(array('url' => url('/viewAllVisits?date=').$this_date, 'method' => 'get')) !!}
-            
-            <div class="row">
+                @php
+                    $this_date = request()->input('date');
+                @endphp
+                
+                {!! Form::open(array('url' => url('/viewAllVisits?date=').$this_date, 'method' => 'get')) !!}
+                
+                <div class="row">
 
-                <div class="form-group">
-                    <div class="input-group">
-                        {{ Form::label('date', 'Pick Date: ', ['class' => 'pr-3'] ) }}
-                        {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datepick",
-                            'name' => "date", 'readonly' =>"readonly", ]) }}
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
+                    <div class="form-group">
+                        <div class="input-group">
+                            {{ Form::label('date', 'Pick Date: ', ['class' => 'pr-3'] ) }}
+                            {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datepick",
+                                'name' => "date", 'readonly' =>"readonly", ]) }}
+                            <span class="input-group-append">
+                                <span class="input-group-text bg-white">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="text-left pl-4">
-                    {{Form::submit('Go', ['class' => "btn btn-primary btn-lg pull-right"])}}
-                </div>
-
-                <div class="container text-right">
-                    <div class="col">
-                        <input type="button" class="btn btn-secondary" value="Print Page" onclick="printDiv()">
+                    <div class="text-left pl-4">
+                        {{Form::submit('Go', ['class' => "btn btn-primary btn-lg pull-right"])}}
                     </div>
-                    <div class="col">
-                        <input type="button" class="btn btn-secondary" value="Export Table to Sheet" onclick="exportTableToExcel()">
-                    </div>
-                </div>
 
-            </div>    
-            {!! Form::close() !!}
- 
+                </div>    
+                {!! Form::close() !!}
+    
+            </div>
+
+            <div class="container text-right">
+                <div class="col">
+                    <input type="button" class="btn btn-secondary" value="Print Page" onclick="printDiv()">
+                </div>
+                <div class="col">
+                    <input type="button" class="btn btn-secondary" value="Export Table to Sheet" onclick="exportTableToExcel()">
+                </div>
+            </div>
         </div>
 
         @php
