@@ -31,6 +31,7 @@ class ViewController extends Controller
 
     public function viewAll(Request $request)
     {
+        dd($request->query('date'));
 
         $selectedDate = $request->query('date');
         
