@@ -13,34 +13,32 @@
 
     <div class="au-card au-card-top-countries m-b-40">
 
-        <div class="container" style="background-color: #">
+        <div class="container text-left" style="background-color: #">
 
             @php
                 $this_date = request()->input('date');
             @endphp
             
+            {!! Form::open(array('url' => url('/viewAllVisits?date=').$this_date, 'method' => 'get')) !!}
             
             <div class="row">
-                <div class="container text-left">
-                    {!! Form::open(array('url' => url('/viewAllVisits?date=').$this_date, 'method' => 'get')) !!}
-                        <div class="form-group">
-                            <div class="input-group">
-                                {{ Form::label('date', 'Pick Date: ', ['class' => 'pr-3'] ) }}
-                                {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datepick",
-                                    'name' => "date", 'readonly' =>"readonly", ]) }}
-                                <span class="input-group-append">
-                                    <span class="input-group-text bg-white">
-                                        <i class="fa fa-calendar"></i>
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
 
-                        <div class="text-left pl-4">
-                            {{Form::submit('Go', ['class' => "btn btn-primary btn-lg pull-right"])}}
-                        </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        {{ Form::label('date', 'Pick Date: ', ['class' => 'pr-3'] ) }}
+                        {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datepick",
+                            'name' => "date", 'readonly' =>"readonly", ]) }}
+                        <span class="input-group-append">
+                            <span class="input-group-text bg-white">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
 
-                    {!! Form::close() !!}
+
+                <div class="text-left pl-4">
+                    {{Form::submit('Go', ['class' => "btn btn-primary btn-lg pull-right"])}}
                 </div>
 
                 <div class="container text-right">
@@ -53,6 +51,7 @@
                 </div>
 
             </div>    
+            {!! Form::close() !!}
  
         </div>
 
