@@ -63,18 +63,10 @@
     <script src="/vendor/animsition/animsition.min.js"></script>
     <script src="/js/main.js"></script>
     
-    @php
-        use Carbon\Carbon;
-    @endphp
-
     <script>
         $(function(){
             $('#datepick').daterangepicker({
-                //'format': 'yyyy-mm-dd',
-                //'autoclose': true,
                 autoApply: true,
-                //startDate: {{Carbon::today()->format('Y-m-d')}},
-                //endDate: {{Carbon::today()->format('Y-m-d')}},
                 locale: {
                     format: 'YYYY-MM-DD',
                 }
