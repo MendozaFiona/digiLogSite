@@ -47,11 +47,13 @@
         </div>
 
         @php
-            $displayDate = date('F d, Y', strtotime($selectedDate));
-            $displayWeekday = date("l", strtotime($selectedDate));
+            $displayStart = date('F d, Y', $startDate);
+            $displayEnd = date('F d, Y', $endDate);
+            $startWeekday = date("l", $startDate);
+            $endWeekday = date("l", $endDate);
         @endphp
 
-        <p class="text-center">{{$displayWeekday}} | {{$displayDate}}</p>
+        <p class="text-center">{{$startWeekday}} | {{$displayStart}} : {{$endWeekday}} | {{$displayEnd}}</p>
 
         <div class="au-card-inner">
             <div class="table-responsive">
@@ -61,6 +63,7 @@
                             <tr>
                                 <th class="text-center">Visit ID</th>
                                 <th class="text-center">Name</th>
+                                <th class="text-center">Visit Date</th>
                                 <th class="text-center">Time In</th>
                             </tr>
                         </thead>
@@ -76,6 +79,7 @@
                                         <tr onclick="window.location='/campusVisits/{{$campusVisit->id}}'">
                                             <td class="text-center">{{$campusVisit->id}}</td>
                                             <td class="text-center">{{ CampusVisit::name($campusVisit->id) }} </td>
+                                            <td class="text-center">{{$campusVisit->date}}</td>
                                             <td class="text-center">{{$campusVisit->time_in}}</td>
                                             <!--access db here to display other details such as name, time in, etc.-->
                                         </tr>

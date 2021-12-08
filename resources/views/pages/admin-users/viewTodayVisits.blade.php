@@ -36,6 +36,7 @@
                             <tr>
                                 <th class="text-center">Visit ID</th>
                                 <th class="text-center">Name</th>
+                                <th class="text-center">Visit Date</th>
                                 <th class="text-center">Time In</th>
                             </tr>
                         </thead>
@@ -51,6 +52,7 @@
                                         <tr onclick="window.location='/campusVisits/{{$campusVisit->id}}'">
                                             <td class="text-center">{{$campusVisit->id}}</td>
                                             <td class="text-center">{{ CampusVisit::name($campusVisit->id) }} </td>
+                                            <td class="text-center">{{$campusVisit->date}}</td>
                                             <td class="text-center">{{$campusVisit->time_in}}</td>
                                             <!--access db here to display other details such as name, time in, etc.-->
                                         </tr>

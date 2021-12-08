@@ -37,13 +37,12 @@ class ViewController extends Controller
 
         $startDate = date($dateArray[0]);
         $endDate = date($dateArray[1]);
-
-        $selectedDate = $request->query('date');
         
         $visits = CampusVisit::where('date', [$startDate, $endDate])->get();
         
         $campusVisits = $visits->all();
-        return view('pages/admin-users/viewVisitsAll')->with('campusVisits', $campusVisits)->with('selectedDate', $selectedDate);
+        return view('pages/admin-users/viewVisitsAll')->with('campusVisits', $campusVisits)->with('startDate', $startDate)
+            ->with('endDate', $endDate);
     }
 
     public function showVisit($id)
