@@ -34,6 +34,16 @@
                         Visit Purpose: {{ $visit->purpose }}
                     </div>  
                 </div>
+                @if ($visit->plate_num != null)
+                    <div class="row pt-2 pl-5">
+                        <div class="col">
+                            Vehicle Type: {{ $visit->vehicle_type }}
+                        </div>
+                        <div class="col">
+                            Plate No.: {{ $visit->plate_num }}
+                        </div>  
+                    </div>
+                @endif
 
                 @foreach (OfficeVisit::visitorOfficeVisits($visit->id) as $officeVisit)
 

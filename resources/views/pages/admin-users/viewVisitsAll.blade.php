@@ -66,6 +66,7 @@
                                 <th class="text-center">Visit Date</th>
                                 <th class="text-center">Time In</th>
                                 <th class="text-center">Category</th>
+                                <th class="text-center">Plate No.</th>
                             </tr>
                         </thead>
 
@@ -78,18 +79,21 @@
                                 @php
                                     if($campusVisit->plate_num == null){
                                         $category = "On Foot";
+                                        $platenum = "N/A"
                                     } else {
                                         $category = "With Vehicle";
+                                        $platenum = $campusVisit->plate_num;
                                     }
                                 @endphp
                             
-                                        <tr onclick="window.location='/campusVisits/{{$campusVisit->id}}'">
-                                            <td class="text-center">{{$campusVisit->name}}</td>
-                                            <td class="text-center">{{ $campusVisit->contact }} </td>
-                                            <td class="text-center">{{$campusVisit->date}}</td>
-                                            <td class="text-center">{{$campusVisit->time_in}}</td>
-                                            <td class="text-center">{{$category}}</td>
-                                        </tr>
+                                <tr onclick="window.location='/campusVisits/{{$campusVisit->id}}'">
+                                    <td class="text-center">{{$campusVisit->name}}</td>
+                                    <td class="text-center">{{ $campusVisit->contact }} </td>
+                                    <td class="text-center">{{$campusVisit->date}}</td>
+                                    <td class="text-center">{{$campusVisit->time_in}}</td>
+                                    <td class="text-center">{{$category}}</td>
+                                    <td class="text-center">{{$platenum}}</td>
+                                </tr>
 
                             @endforeach
                         </tbody>
