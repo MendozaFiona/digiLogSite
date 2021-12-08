@@ -31,7 +31,11 @@ class ViewController extends Controller
 
     public function viewAll(Request $request)
     {
-        dd($request->query('date'));
+        $dateRange = $request->query('date');
+
+        $dateArray = explode(" - ", $dateRange);
+
+        dd($dateArray);
 
         $selectedDate = $request->query('date');
         
