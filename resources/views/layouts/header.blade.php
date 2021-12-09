@@ -90,8 +90,14 @@
 
     <script>
         function exportTableToExcel(){
-            var table2excel = new Table2Excel();
-            table2excel.export(document.querySelectorAll("#tblData"));
+            var myEle = document.getElementById("#tblData");
+            
+            if(myEle){
+                alert("There's nothing to export.");
+            } else {
+                var table2excel = new Table2Excel();
+                table2excel.export(document.querySelectorAll("#tblData"));
+            }
         }
     </script>
     
