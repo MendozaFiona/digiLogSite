@@ -43,8 +43,6 @@ class ViewController extends Controller
         $startTime = date("H:i:s", strtotime($dateArray[1]));
         $endTime = date("H:i:s", strtotime($dateArray[4]));
 
-        dd($startTime);
-
         $startDate = date($dateArray[0]);
         $endDate = date($dateArray[3]);
 
