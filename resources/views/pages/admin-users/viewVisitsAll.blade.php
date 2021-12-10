@@ -45,7 +45,7 @@
                                 <div class="row">
                                     {{Form::select('office',
                                         Office::officesArray(),
-                                        ['class' => "form-control row w-100 center-block"])
+                                        ['class' => "form-control"])
                                 }}
                                 </div>
                                 
