@@ -93,7 +93,7 @@ class OfficeVisitController extends Controller
 
         $officeVisit = new OfficeVisit;
 
-        $visitID = CampusVisit::select('id')->where('name', $name)->orderBy('time_in', 'desc')->first();
+        $visitID = CampusVisit::select('id')->where('name', $name)->where('date', Carbon::today()->format('Y-m-d'))->orderBy('time_in', 'desc')->first();
         
         $officeVisit->visit_id = $visitID->id;
         $officeVisit->office_id = Auth::user()->office_id;
@@ -109,8 +109,8 @@ class OfficeVisitController extends Controller
     public function show($id)
     {
         // FROM OFFICE SITE - removed
-        $visit = OfficeVisit::where('id', $id)->first();
-        return view('pages/office-users/viewSpecificVisit')->with('visit', $visit);
+        //$visit = OfficeVisit::where('id', $id)->first();
+        //return view('pages/office-users/viewSpecificVisit')->with('visit', $visit);
     }
 
 }
