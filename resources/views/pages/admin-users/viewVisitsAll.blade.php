@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="pl-2 col md-6">
+                        <div class="pl-5 col md-6">
                             <div class="form-group">
                                 <div class="row">
                                     {{Form::label('office', 'Office Name')}}
