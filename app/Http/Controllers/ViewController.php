@@ -40,8 +40,8 @@ class ViewController extends Controller
         $nameQuery = $request->query('name');
         $officeQuery = $request->query('office');
 
-        $startTime = date("H:i:s", $dateArray[1]);
-        $endTime = date("H:i:s", $dateArray[4]);
+        $startTime = date("H:i:s", strtotime($dateArray[1]));
+        $endTime = date("H:i:s", strtotime($dateArray[4]));
 
         dd($startTime);
 
