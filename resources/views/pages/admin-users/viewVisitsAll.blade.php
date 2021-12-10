@@ -26,7 +26,7 @@
 
                     <div class="row">
 
-                        <div class="col sm-6">
+                        <div class="col sm-4">
                             <div class="form-group">
                                 <div class="row">
                                     {{Form::label('name', 'Search Name')}}
@@ -36,13 +36,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col sm-6">
+                        <div class="col sm-4">
                             <div class="form-group">
                                 <div class="row">
                                     {{Form::label('office', 'Office Name')}}
                                 </div>
                                 
-                                <div class="row" style="font-size: 8px;">
+                                <div class="row" style="font-size: 14px;">
                                     {{Form::select('office',
                                         Office::officesArray(),
                                         ['class' => "form-control row w-50 center-block",])
