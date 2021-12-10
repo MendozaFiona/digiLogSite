@@ -42,11 +42,10 @@
                                     {{Form::label('office', 'Office Name')}}
                                 </div>
                                 
-                                <div class="row">
+                                <div class="row" style="font-size: 8px;">
                                     {{Form::select('office',
                                         Office::officesArray(),
-                                        ['class' => "form-control row w-50 center-block",
-                                         'style' => "font-size: 14px;"])
+                                        ['class' => "form-control row w-50 center-block",])
                                 }}
                                 </div>
                                 
