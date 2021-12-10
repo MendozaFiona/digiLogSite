@@ -42,8 +42,10 @@ class ViewController extends Controller
         $startDate = date($dateArray[0]);
         $endDate = date($dateArray[1]);
 
+        $visitsQuery = CampusVisit::whereBetween('date', [$startDate, $endDate]);
+
         if($officeQuery == "-1"){
-            $visits = CampusVisit::whereBetween('date', [$startDate, $endDate])->get();
+            $visits = $visitsQuery->get();
         } else {
             $officesArray = Office::officesArray();
             $officeName =  $officesArray[$officeQuery];
@@ -52,7 +54,7 @@ class ViewController extends Controller
             
             $officeVisits = OfficeVisit::where('office_id', $officeID)->pluck('visit_id')->all();      
 
-            $visits = CampusVisit::whereBetween('date', [$startDate, $endDate])->whereIn('id', $officeVisits)->get();
+            $visits = $visitsQuery->whereIn('id', $officeVisits)->get();
         }
         
         $campusVisits = $visits->all();
