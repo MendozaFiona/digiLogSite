@@ -5,7 +5,7 @@
 
 <div class="container pt-3 pb-5">
     <div id="status" class="text-center pb-5">Office Status: {{Office::officeStatus(Auth::user()->office_id)}}</div>
-    <div class="row">
+    <!--<div class="row">
         <div class="col"></div>
         <div class="col">
             <a id = "away" class="btn btn-secondary btn-lg btn-block" style = "background-color: #C4C4C4; color: #000;">AWAY</a>
@@ -14,10 +14,10 @@
             <a id = "available" class="btn btn-success btn-lg btn-block" style = "background-color: #42CD3F; color: #000;">AVAILABLE</a>
         </div>
         <div class="col"></div>
-    </div>
+    </div>-->
 </div>
 
-<script>
+<!--<script>
     var officeID = {{ (Auth::user()->office_id) }};
 
     document.getElementById("away").onclick = function () {
@@ -58,4 +58,4 @@
                 document.getElementById("status").innerText = "Office Status: online";
             }});
     };
-</script>
+</script>-->
