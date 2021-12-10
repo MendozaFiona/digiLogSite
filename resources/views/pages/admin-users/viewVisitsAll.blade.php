@@ -32,7 +32,9 @@
                                     {{Form::label('name', 'Search Name')}}
                                 </div>
                                 <div class="row">
-                                    {{Form::text('name', '', ['class' => "form-control", 'placeholder' => "Name"])}}
+                                    {{Form::text('name', '',
+                                    ['class' => "form-control row w-50 center-block",'placeholder' => "Name"]
+                                    )}}
                                 </div>
                             </div>
                         </div>
