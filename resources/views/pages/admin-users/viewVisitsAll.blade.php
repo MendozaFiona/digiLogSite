@@ -26,7 +26,7 @@
 
                     <div class="row">
 
-                        <div class="col sm-4">
+                        <div class="col">
                             <div class="form-group">
                                 <div class="row">
                                     {{Form::label('name', 'Search Name')}}
@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col sm-4">
+                        <div class="col">
                             <div class="form-group">
                                 <div class="row">
                                     {{Form::label('office', 'Office Name')}}
