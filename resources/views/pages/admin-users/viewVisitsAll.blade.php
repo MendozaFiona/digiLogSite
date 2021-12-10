@@ -28,8 +28,12 @@
 
                         <div class="col">
                             <div class="form-group">
-                                {{Form::label('name', 'Search Name')}}
-                                {{Form::text('name', '', ['class' => "form-control", 'placeholder' => "Name"])}}
+                                <div class="row">
+                                    {{Form::label('name', 'Search Name')}}
+                                </div>
+                                <div class="row">
+                                    {{Form::text('name', '', ['class' => "form-control", 'placeholder' => "Name"])}}
+                                </div>
                             </div>
                         </div>
                         <div class="col">
