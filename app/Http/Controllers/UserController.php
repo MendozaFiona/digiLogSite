@@ -51,6 +51,10 @@ class UserController extends Controller
 
     public function storeAdminUser(Request $request)
     {
+        $count = User::where('role_id', 1)->count();
+
+        //$adminNum = count($count);
+
         $validator = Validator::make($request->all(),[
             // user_id is automatically generated
             'name' => 'required|min:4',
@@ -62,6 +66,11 @@ class UserController extends Controller
         if($validator->fails()) {
             return Redirect::back()->withErrors($validator);
         }
+
+        if($count >= 5) {
+            return Redirect::back()->withErrors("Admin users cannot exceed 5");
+        }
+
         $admin = new Admin;
 
         $init = "ADMIN";
