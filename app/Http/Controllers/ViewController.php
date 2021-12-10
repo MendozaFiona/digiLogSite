@@ -39,6 +39,8 @@ class ViewController extends Controller
         $nameQuery = $request->query('name');
         $officeQuery = $request->query('office');
 
+        dd($nameQuery);
+
         $startDate = date($dateArray[0]);
         $endDate = date($dateArray[1]);
 
@@ -56,6 +58,8 @@ class ViewController extends Controller
 
             $visits = $visitsQuery->whereIn('id', $officeVisits)->get();
         }
+
+        //if($nameQuery = "")
         
         $campusVisits = $visits->all();
         
