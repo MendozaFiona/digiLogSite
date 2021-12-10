@@ -20,6 +20,9 @@
 
                     @php
                         $this_date = request()->input('date');
+                        if($nameQuery == null){
+                            $nameQuery = "";
+                        }
                     @endphp
                     
                     {!! Form::open(array('url' => url('/viewAllVisits?date=').$this_date, 'method' => 'get')) !!}
@@ -32,7 +35,7 @@
                                     {{Form::label('name', 'Search Name')}}
                                 </div>
                                 <div class="row">
-                                    {{Form::text('name', '', ['class' => "form-control", 'placeholder' => "Name"])}}
+                                    {{Form::text('name', $nameQuery, ['class' => "form-control", 'placeholder' => "Name"])}}
                                 </div>
                             </div>
                         </div>
@@ -45,6 +48,7 @@
                                 <div class="row" style="font-size: 14px;">
                                     {{Form::select('office',
                                         [-1 => "All", 'Office Names' => Office::officesArray()],
+                                        $officeQuery,
                                         ['class' => "form-control row w-50 center-block",])
                                 }}
                                 </div>
