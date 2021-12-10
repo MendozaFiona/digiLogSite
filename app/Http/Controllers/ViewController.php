@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\CampusVisit;
+use App\Models\Office;
+use App\Models\OfficeVisit;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -32,13 +34,27 @@ class ViewController extends Controller
     public function viewAll(Request $request)
     {
         $dateRange = $request->query('date');
-
         $dateArray = explode(" - ", $dateRange);
+
+        $nameQuery = $request->query('name');
+        $officeQuery = $request->query('office');
+
+        if($officeQuery == "-1"){
+            $visits = CampusVisit::whereBetween('date', [$startDate, $endDate])->get();
+        } else {
+            $officesArray = Office::officesArray();
+            $officeName =  $officesArray[$officeQuery];
+
+            $officeID = Office::select('id')->where('name', $officeName)->first();
+            
+            $officeVisits = OfficeVisit::where('office_id', $officeID)->get();
+            $visitsArray = $officeVisits->pluck('visit_id')->all();
+
+            $visits = CampusVisit::whereBetween('date', [$startDate, $endDate])->whereIn('id', $visitsArray)->get();
+        }
 
         $startDate = date($dateArray[0]);
         $endDate = date($dateArray[1]);
-        
-        $visits = CampusVisit::whereBetween('date', [$startDate, $endDate])->get();
         
         $campusVisits = $visits->all();
         
