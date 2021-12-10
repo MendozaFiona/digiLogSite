@@ -50,7 +50,7 @@ class ViewController extends Controller
 
             $officeID = Office::select('id')->where('name', $officeName)->first();
             
-            $officeVisits = OfficeVisit::where('office_id', $officeID)->pluck('visit_id')->all();      
+            $officeVisits = OfficeVisit::where('office_id', 20210105)->pluck('visit_id')->all();      
             dd($officeVisits);
             $visitsArray = $officeVisits;
 
