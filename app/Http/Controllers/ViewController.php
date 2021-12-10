@@ -49,13 +49,7 @@ class ViewController extends Controller
         $start = $startDate." ".$startTime;
         $end = $endDate." ".$endTime;
 
-        $comp = CampusVisit::select(DB::raw("CONCAT(date, ' ' ,time_in) AS full_date"))->where('name', 'Tester A. Debugger')->value('full_date');
-
-        dd($comp);
-
-
-
-        $visitsQuery = CampusVisit::whereBetween(DB::raw("CONCAT('date', ' ', 'time_in')"), [$start, $end]);
+        $visitsQuery = CampusVisit::whereBetween(DB::raw("CONCAT(date, ' ', time_in)"), [$start, $end]);
 
         if($officeQuery != "-1"){
             $officesArray = Office::officesArray();
