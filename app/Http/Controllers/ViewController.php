@@ -71,7 +71,8 @@ class ViewController extends Controller
         $campusVisits = $visits->all();
         
         return view('pages/admin-users/viewVisitsAll')->with('campusVisits', $campusVisits)->with('startDate', $startDate)
-            ->with('endDate', $endDate)->with('nameQuery', $nameQuery)->with('officeQuery', $officeQuery);
+            ->with('endDate', $endDate)->with('nameQuery', $nameQuery)->with('officeQuery', $officeQuery)
+            ->with('startTime', $startTime)->with('endTime', $endTime);
     }
 
     public function showVisit($id)

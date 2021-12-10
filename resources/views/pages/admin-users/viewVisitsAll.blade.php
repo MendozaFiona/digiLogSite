@@ -60,10 +60,14 @@
 
                     <div class="row">
 
+                        @php
+                            $defaultDate = 
+                        @endphp
+
                         <div class="form-group">
                             <div class="input-group">
                                 {{ Form::label('date', 'DateTime: ', ['class' => 'pr-3'] ) }}
-                                {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datetimepick",
+                                {{ Form::text('date', $startDate." ".$startTime." - ".$endDate." ".$endTime, ['class' => 'form-control datepicker pl-2',  'id' => "datetimepick",
                                     'name' => "date", 'readonly' =>"readonly", ]) }}
                                 <span class="input-group-append">
                                     <span class="input-group-text bg-white">
@@ -105,7 +109,7 @@
 
         <div id="pdfprint">
 
-            <p class="text-center">{{$startWeekday}} | {{$displayStart}} : {{$endWeekday}} | {{$displayEnd}}</p>
+            <p class="text-center">{{$startWeekday}} | {{$displayStart}} ({{$startTime}}) TO {{$endWeekday}} | {{$displayEnd}} ({{$endTime}})</p>
 
             <div class="au-card-inner">
                 <div class="table-responsive">
