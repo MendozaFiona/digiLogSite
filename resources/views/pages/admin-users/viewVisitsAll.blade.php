@@ -26,25 +26,28 @@
 
                     <div class="row">
 
-                        <div class="form-group">
-                            {{Form::label('name', 'Search Name')}}
-                            {{Form::text('name', '', ['class' => "form-control", 'placeholder' => "Name"])}}
+                        <div class="col">
+                            <div class="form-group">
+                                {{Form::label('name', 'Search Name')}}
+                                {{Form::text('name', '', ['class' => "form-control", 'placeholder' => "Name"])}}
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <div class="row">
+                                    {{Form::label('office', 'Office Name')}}
+                                </div>
+                                
+                                <div class="row">
+                                    {{Form::select('office',
+                                        Office::officesArray(),
+                                        ['class' => "form-control row w-100 center-block"])
+                                }}
+                                </div>
+                                
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="row">
-                                {{Form::label('office', 'Office Name')}}
-                            </div>
-                            
-                            <div class="row">
-                                {{Form::select('office',
-                                    Office::officesArray(),
-                                    ['class' => "form-control row w-100 center-block"])
-                            }}
-                            </div>
-                            
-                        </div>
-                        
                     </div>
 
                     <div class="row">
