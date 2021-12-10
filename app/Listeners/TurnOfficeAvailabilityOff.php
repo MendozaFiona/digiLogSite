@@ -29,12 +29,14 @@ class TurnOfficeAvailabilityOff
      */
     public function handle(Logout $event)
     {
-        $office = Office::find(Auth::user()->office_id);
+        if(Auth::user()->role_id == 2){
+            $office = Office::find(Auth::user()->office_id);
 
-        $office->status = 'offline';
+            $office->status = 'offline';
 
-        $office->save();
-        
-        return back()->with('success', 'Status Updated');
+            $office->save();
+            
+            return back()->with('success', 'Status Updated');
+        }
     }
 }

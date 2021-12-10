@@ -29,12 +29,14 @@ class TurnOfficeAvailabilityOn
      */
     public function handle(Login $event)
     {
-        $office = Office::find(Auth::user()->office_id);
+        if(Auth::user()->role_id == 2){
+            $office = Office::find(Auth::user()->office_id);
 
-        $office->status = 'online';
+            $office->status = 'online';
 
-        $office->save();
-        
-        return back()->with('success', 'Status Updated');
+            $office->save();
+            
+            return back()->with('success', 'Status Updated');
+        }
     }
 }
