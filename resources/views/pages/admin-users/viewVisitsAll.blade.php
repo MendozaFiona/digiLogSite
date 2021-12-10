@@ -80,7 +80,7 @@
                 </div>
             </div>
 
-            <div class="col pt-2">
+            <div class="col pt-5">
                 <div class="container text-right">
                     <div class="col">
                         <input type="button" class="btn btn-secondary" value="Save Table as PDF" onclick="printDiv()">
