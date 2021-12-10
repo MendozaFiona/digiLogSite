@@ -34,12 +34,10 @@ class ViewController extends Controller
     public function viewAll(Request $request)
     {
         $dateRange = $request->query('date');
-        $dateArray = explode("+", $dateRange);
+        $dateArray = explode(" ", $dateRange);
 
         $nameQuery = $request->query('name');
         $officeQuery = $request->query('office');
-
-        dd($dateArray);
 
         $startTime = date($dateArray[1]);
         $endTime = date($dateArray[4]);
@@ -50,6 +48,14 @@ class ViewController extends Controller
         $endDate = date($dateArray[3]);
 
         $visitsQuery = CampusVisit::whereBetween('date', [$startDate, $endDate]);
+
+        $removeStart = $visitsQuery->where('date', $startDate)->where('time_in', '<', $startTime);
+        $removeEnd = $visitsQuery->where('date', $endDate)->where('time_in', '>', $endTime);
+
+        $visitsQuery = $visitsQuery->filter($removeStart);
+        $visitsQuery = $visitsQuery->filter($removeEnd);
+
+        dd($visitsQuery);
 
         if($officeQuery != "-1"){
             $officesArray = Office::officesArray();
