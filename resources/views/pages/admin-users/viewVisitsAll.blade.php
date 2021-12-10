@@ -25,13 +25,12 @@
                     {!! Form::open(array('url' => url('/viewAllVisits?date=').$this_date, 'method' => 'get')) !!}
 
                     <div class="row">
+
                         <div class="form-group">
                             {{Form::label('name', 'Search Name')}}
                             {{Form::text('name', '', ['class' => "form-control", 'placeholder' => "Name"])}}
                         </div>
-                    </div>
-                    
-                    <div class="row">
+
                         <div class="form-group">
                             <div class="row">
                                 {{Form::label('office', 'Office Name')}}
@@ -45,6 +44,7 @@
                             </div>
                             
                         </div>
+                        
                     </div>
 
                     <div class="row">
