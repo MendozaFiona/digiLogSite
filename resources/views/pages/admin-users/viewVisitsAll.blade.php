@@ -46,7 +46,7 @@
                                     {{Form::select('office',
                                         Office::officesArray(),
                                         ['class' => "form-control row w-50 center-block",
-                                         'style' => "font-size: 18px"])
+                                         'style' => "font-size: 14px;"])
                                 }}
                                 </div>
                                 
