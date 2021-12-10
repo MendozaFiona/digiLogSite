@@ -50,9 +50,9 @@ class ViewController extends Controller
 
             $officeID = Office::select('id')->where('name', $officeName)->first();
             
-            $officeVisits = OfficeVisit::where('office_id', $officeID)->get();      
+            $officeVisits = OfficeVisit::where('office_id', $officeID)->pluck('visit_id')->all();      
             dd($officeVisits);
-            $visitsArray = $officeVisits->pluck('visit_id')->all();
+            $visitsArray = $officeVisits;
 
             $visits = CampusVisit::whereBetween('date', [$startDate, $endDate])->whereIn('id', $visitsArray)->get();
         }
