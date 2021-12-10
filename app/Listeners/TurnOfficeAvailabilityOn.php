@@ -31,8 +31,6 @@ class TurnOfficeAvailabilityOn
     {
         $office = Office::find(Auth::user()->office_id);
 
-        dd($office);
-
         $office->status = 'online';
 
         $office->save();
