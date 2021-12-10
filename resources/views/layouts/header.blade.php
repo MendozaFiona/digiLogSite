@@ -79,6 +79,18 @@
     </script>
 
     <script>
+        $(function(){
+            $('#datetimepick').daterangepicker({
+                timePicker: true,
+                autoApply: true,
+                locale: {
+                    format: 'YYYY-MM-DD HH:MM:SS',
+                }
+            })
+        });
+    </script>
+
+    <script>
         function printDiv() {
             var divContents = document.getElementById("pdfprint").innerHTML;
             var a = window.open('', '', 'height=500, width=500');

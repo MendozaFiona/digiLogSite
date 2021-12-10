@@ -32,7 +32,7 @@
                         <div class="col md-6">
                             <div class="form-group">
                                 <div class="row">
-                                    {{Form::label('name', 'Search Name')}}
+                                    {{Form::label('name', 'Visitor Name')}}
                                 </div>
                                 <div class="row">
                                     {{Form::text('name', $nameQuery, ['class' => "form-control", 'placeholder' => "Name"])}}
@@ -62,37 +62,14 @@
 
                         <div class="form-group">
                             <div class="input-group">
-                                <div class="row">
-                                    {{ Form::label('date', 'Pick Date: ', ['class' => 'pr-3'] ) }}
-                                </div>
-                                
-                                <div class="row">
-                                    {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datepick",
-                                        'name' => "date", 'readonly' =>"readonly", ]) }}
-                                    <span class="input-group-append">
-                                        <span class="input-group-text bg-white">
-                                            <i class="fa fa-calendar"></i>
-                                        </span>
+                                {{ Form::label('date', 'Date: ', ['class' => 'pr-3'] ) }}
+                                {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datetimepick",
+                                    'name' => "date", 'readonly' =>"readonly", ]) }}
+                                <span class="input-group-append">
+                                    <span class="input-group-text bg-white">
+                                        <i class="fa fa-calendar"></i>
                                     </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="row">
-                                    {{ Form::label('date', 'Pick Date: ', ['class' => 'pr-3'] ) }}
-                                </div>
-                                
-                                <div class="row">
-                                    {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datepick",
-                                        'name' => "date", 'readonly' =>"readonly", ]) }}
-                                    <span class="input-group-append">
-                                        <span class="input-group-text bg-white">
-                                            <i class="fa fa-calendar"></i>
-                                        </span>
-                                    </span>
-                                </div>
+                                </span>
                             </div>
                         </div>
 
