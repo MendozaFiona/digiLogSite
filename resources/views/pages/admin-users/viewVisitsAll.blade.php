@@ -32,9 +32,7 @@
                                     {{Form::label('name', 'Search Name')}}
                                 </div>
                                 <div class="row">
-                                    {{Form::text('name', '',
-                                    ['class' => "form-control row w-50 center-block",'placeholder' => "Name"]
-                                    )}}
+                                    {{Form::text('name', '', ['class' => "form-control", 'placeholder' => "Name"])}}
                                 </div>
                             </div>
                         </div>
@@ -47,7 +45,8 @@
                                 <div class="row">
                                     {{Form::select('office',
                                         Office::officesArray(),
-                                        ['class' => "form-control row w-50 center-block"])
+                                        ['class' => "form-control row w-50 center-block",
+                                         'style' => "font-size: 18px"])
                                 }}
                                 </div>
                                 
