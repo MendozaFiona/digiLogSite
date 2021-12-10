@@ -49,7 +49,7 @@
                                     {{Form::select('office',
                                         [-1 => "All", 'Office Names' => Office::officesArray()],
                                         $officeQuery,
-                                        ['class' => "form-control row w-50 center-block",])
+                                        ['class' => "form-control",])
                                 }}
                                 </div>
                                 
