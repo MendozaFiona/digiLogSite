@@ -49,7 +49,6 @@ class ViewController extends Controller
             $officeName =  $officesArray[$officeQuery];
 
             $officeID = Office::select('id')->where('name', $officeName)->first();
-            dd($officeID);
             
             $officeVisits = OfficeVisit::where('office_id', $officeID)->get();      
             dd($officeVisits);
