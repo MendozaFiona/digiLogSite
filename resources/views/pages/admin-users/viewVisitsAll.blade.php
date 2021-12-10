@@ -109,7 +109,8 @@
 
         <div id="pdfprint">
 
-            <p class="text-center">{{$startWeekday}} | {{$displayStart}} ({{$startTime}}) TO {{$endWeekday}} | {{$displayEnd}} ({{$endTime}})</p>
+            <p class="text-center">{{$displayStart}} [{{$startTime}}] || {{$displayEnd}} [{{$endTime}}]</p>
+            <p class="text-center">{{$startWeekday}} || {{$endWeekday}}</p>
 
             <div class="au-card-inner">
                 <div class="table-responsive">
