@@ -45,13 +45,7 @@ class ViewController extends Controller
         $startDate = date($dateArray[0]);
         $endDate = date($dateArray[3]);
 
-        $visitsQuery = CampusVisit::whereBetween('date', [$startDate, $endDate]);
-
-        $removeStart = $visitsQuery->where('date', $startDate)->where('time_in', '<', $startTime);
-        $removeEnd = $visitsQuery->where('date', $endDate)->where('time_in', '>', $endTime);
-
-        $visitsQuery = $visitsQuery->filter($removeStart);
-        $visitsQuery = $visitsQuery->filter($removeEnd);
+        $visitsQuery = CampusVisit::whereBetween(DB::raw("CONCAT('date', ' ', 'time')"), [$startDate." ".$startTime, $endDate." ".$endTime]);
 
         dd($visitsQuery);
 
