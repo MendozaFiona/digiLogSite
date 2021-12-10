@@ -62,7 +62,7 @@
 
                         <div class="form-group">
                             <div class="input-group">
-                                {{ Form::label('date', 'Date: ', ['class' => 'pr-3'] ) }}
+                                {{ Form::label('date', 'DateTime: ', ['class' => 'pr-3'] ) }}
                                 {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datetimepick",
                                     'name' => "date", 'readonly' =>"readonly", ]) }}
                                 <span class="input-group-append">

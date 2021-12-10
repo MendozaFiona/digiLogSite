@@ -25,7 +25,7 @@
                                     @endphp
                                     <div class="au-task__item-inner">
                                         <h5 class="task">
-                                            <a href="{{url('/viewAllVisits?name=&office=-1&date=').$this_date."+-+".$this_date}}" style="color: #000;">View All Visits</a>
+                                            <a href="{{url('/viewAllVisits?name=&office=-1&date=').$this_date."+0%3A00+-+".$this_date."+23%3A59"}}" style="color: #000;">View All Visits</a>
                                         </h5>
                                     </div>
                                 </div>

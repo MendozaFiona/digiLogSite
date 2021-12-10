@@ -40,7 +40,7 @@
                                 </div>
                                 
                                 <div class="pt-4">
-                                    <a href="{{url('/viewAllVisits?name=&office=-1&date=').$this_date."+-+".$this_date}}" class="btn btn-secondary btn-lg btn-block" style = "background-color: #FDB417; border-radius: 20px; font-size: 18px;">All Visit</a>
+                                    <a href="{{url('/viewAllVisits?name=&office=-1&date=').$this_date."+0%3A00+-+".$this_date."+23%3A59"}}" class="btn btn-secondary btn-lg btn-block" style = "background-color: #FDB417; border-radius: 20px; font-size: 18px;">All Visit</a>
                                 </div>
                             </div>
                             
