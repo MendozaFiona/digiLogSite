@@ -109,8 +109,6 @@ class OfficeVisitController extends Controller
     public function show($id)
     {
         // FROM OFFICE SITE - removed
-        //$visit = OfficeVisit::where('id', $id)->first();
-        //return view('pages/office-users/viewSpecificVisit')->with('visit', $visit);
     }
 
 }
