@@ -84,7 +84,7 @@
                 timePicker: true,
                 autoApply: true,
                 locale: {
-                    format: 'YYYY-MM-DD HH:MM',
+                    format: 'YYYY-MM-DD H:mm',
                 }
             })
         });
