@@ -61,13 +61,13 @@
                     <div class="row">
 
                         @php
-                            $defaultDate = 
+                            $defaultDate = $startDate." ".$startTime." - ".$endDate." ".$endTime;
                         @endphp
 
                         <div class="form-group">
                             <div class="input-group">
                                 {{ Form::label('date', 'DateTime: ', ['class' => 'pr-3'] ) }}
-                                {{ Form::text('date', $startDate." ".$startTime." - ".$endDate." ".$endTime, ['class' => 'form-control datepicker pl-2',  'id' => "datetimepick",
+                                {{ Form::text('date', $defaultDate, ['class' => 'form-control datepicker pl-2',  'id' => "datetimepick",
                                     'name' => "date", 'readonly' =>"readonly", ]) }}
                                 <span class="input-group-append">
                                     <span class="input-group-text bg-white">
