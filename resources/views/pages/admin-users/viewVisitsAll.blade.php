@@ -62,14 +62,37 @@
 
                         <div class="form-group">
                             <div class="input-group">
-                                {{ Form::label('date', 'Pick Date: ', ['class' => 'pr-3'] ) }}
-                                {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datepick",
-                                    'name' => "date", 'readonly' =>"readonly", ]) }}
-                                <span class="input-group-append">
-                                    <span class="input-group-text bg-white">
-                                        <i class="fa fa-calendar"></i>
+                                <div class="row">
+                                    {{ Form::label('date', 'Pick Date: ', ['class' => 'pr-3'] ) }}
+                                </div>
+                                
+                                <div class="row">
+                                    {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datepick",
+                                        'name' => "date", 'readonly' =>"readonly", ]) }}
+                                    <span class="input-group-append">
+                                        <span class="input-group-text bg-white">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
                                     </span>
-                                </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="row">
+                                    {{ Form::label('date', 'Pick Date: ', ['class' => 'pr-3'] ) }}
+                                </div>
+                                
+                                <div class="row">
+                                    {{ Form::text('date', $startDate." - ".$endDate, ['class' => 'form-control datepicker pl-2',  'id' => "datepick",
+                                        'name' => "date", 'readonly' =>"readonly", ]) }}
+                                    <span class="input-group-append">
+                                        <span class="input-group-text bg-white">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
 
