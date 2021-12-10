@@ -51,7 +51,7 @@ class ViewController extends Controller
 
         $comp = CampusVisit::select(DB::raw("CONCAT('date','time_in') AS TEST"))->first();
 
-        dd($comp);
+        dd($comp->value('TEST'));
 
         $visitsQuery = CampusVisit::whereBetween(DB::raw("CONCAT('date', ' ', 'time_in')"), [$start, $end]);
 
