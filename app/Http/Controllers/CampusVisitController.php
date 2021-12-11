@@ -47,7 +47,7 @@ class CampusVisitController extends Controller
         $validator = Validator::make($request->all(),[
             'name' => 'required|min:3',
             'contact' => 'required|min:11|starts_with:09',
-            'purpose' => 'required',
+            'destination' => 'required',
         ]);
 
         if($validator->fails()){
@@ -56,7 +56,7 @@ class CampusVisitController extends Controller
             $err = array(
                 'name' => $errors->first('name'),
                 'contact' => $errors->first('contact'),
-                'purpose' => $errors->first('purpose'),
+                'destination' => $errors->first('destination'),
             );
 
             return response()->json(array(
@@ -76,7 +76,7 @@ class CampusVisitController extends Controller
 
         $campus_visit->name = $request->input('name');
         $campus_visit->contact = $request->input('contact');
-        $campus_visit->purpose = $request->input('purpose');
+        $campus_visit->destination = $request->input('destination');
 
         if($v_type != null){
             $campus_visit->vehicle_type = $v_type;

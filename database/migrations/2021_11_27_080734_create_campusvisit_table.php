@@ -19,7 +19,7 @@ class CreateCampusvisitTable extends Migration
             $table->string('contact');
             $table->string('vehicle_type')->nullable();
             $table->string('plate_num')->nullable();
-            $table->string('purpose');
+            $table->string('destination');
             $table->date('date');
             $table->time('time_in');
         });

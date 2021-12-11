@@ -31,7 +31,7 @@
                         Campus Time In: {{ $visit->time_in }}
                     </div>
                     <div class="col">
-                        Visit Purpose: {{ $visit->purpose }}
+                        Destination: {{ $visit->destination }}
                     </div>  
                 </div>
                 @if ($visit->plate_num != null)

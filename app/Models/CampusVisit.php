@@ -38,9 +38,9 @@ class CampusVisit extends Model
         return CampusVisit::where('id', $visit_id)->first()->time_in;
     }
 
-    public static function purpose($visit_id)
+    public static function destination($visit_id)
     {
-        return CampusVisit::where('id', $visit_id)->first()->purpose;
+        return CampusVisit::where('id', $visit_id)->first()->destination;
     }
 
     public static function namesArray()
