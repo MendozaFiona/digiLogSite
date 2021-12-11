@@ -111,12 +111,12 @@ class CampusVisitController extends Controller
             ->where('name', $name)->get();
 
         if($coordinates->isEmpty()){
-            $bldgID = DB::table('office')->select('building_num')
-                ->where('name', $name)->first();
+            $bldgID = DB::table('office')->where('name', $name)
+                ->value('building_num');
             
             $coordinates = DB::table('building')
                 ->select(array('latitude', 'longitude', 'id'))
-                ->where('id', (int)$bldgID)->get();
+                ->where('id', $bldgID)->get();
 
         }
 
