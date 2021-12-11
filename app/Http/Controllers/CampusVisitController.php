@@ -107,7 +107,7 @@ class CampusVisitController extends Controller
     public function getCoordinates($name){
 
         $coordinates = DB::table('building')
-            ->select(array('latitude', 'longitude', 'id'))
+            ->select(array('latitude', 'longitude', 'id', 'name'))
             ->where('name', $name)->get();
 
         if($coordinates->isEmpty()){
@@ -115,7 +115,7 @@ class CampusVisitController extends Controller
                 ->value('building_num');
             
             $coordinates = DB::table('building')
-                ->select(array('latitude', 'longitude', 'id'))
+                ->select(array('latitude', 'longitude', 'id', 'name'))
                 ->where('id', $bldgID)->get();
 
         }
