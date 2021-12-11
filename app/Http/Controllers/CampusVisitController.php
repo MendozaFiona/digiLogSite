@@ -110,7 +110,7 @@ class CampusVisitController extends Controller
             ->select(array('latitude', 'longitude', 'id'))
             ->where('name', $name)->get();
 
-        if($coordinates == null){
+        if($coordinates->isEmpty()){
             $bldgID = DB::table('office')->select('building_num')
                 ->where('name', $name)->first();
             
@@ -120,7 +120,7 @@ class CampusVisitController extends Controller
 
         }
 
-        return $name;
+        return $coordinates;
 
     }
  
