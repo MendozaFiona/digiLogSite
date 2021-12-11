@@ -51,6 +51,7 @@
                                     <th class="text-center">Contact</th>
                                     <th class="text-center">Visit Date</th>
                                     <th class="text-center">Time In</th>
+                                    <th class="text-center">Destination</th>
                                     <th class="text-center">Category</th>
                                     <th class="text-center">Plate No.</th>
                                 </tr>
@@ -77,6 +78,7 @@
                                         <td class="text-center">{{ $campusVisit->contact }} </td>
                                         <td class="text-center">{{$campusVisit->date}}</td>
                                         <td class="text-center">{{$campusVisit->time_in}}</td>
+                                        <td class="text-center">{{$campusVisit->destination}}</td>
                                         <td class="text-center">{{$category}}</td>
                                         <td class="text-center">{{$platenum}}</td>
                                     </tr>
