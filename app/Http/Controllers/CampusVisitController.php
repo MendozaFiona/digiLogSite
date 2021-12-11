@@ -104,8 +104,7 @@ class CampusVisitController extends Controller
         return $places;
     }
 
-    public function getCoordinates(Request $request){
-        $name = $request->input('name');
+    public function getCoordinates($name){
 
         $coordinates = DB::table('building')
             ->select(array('latitude', 'longitude', 'id'))
@@ -120,7 +119,7 @@ class CampusVisitController extends Controller
                 ->where('id', $bldgID)->get();
 
         }
-        
+
         return $coordinates;
 
     }
