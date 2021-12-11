@@ -260,8 +260,8 @@ class DatabaseSeeder extends Seeder
                 'latitude' => '8.484833',
                 'longitude' => '124.65675',
             ),
-            )
-        );
+            
+        ));
 
         DB::table('office')->insert(array(
             array(
