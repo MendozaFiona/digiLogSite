@@ -93,5 +93,36 @@ class CampusVisitController extends Controller
         ), 201);
 
     }
+
+    public function getPlaces(){
+        $offices = DB::table('office')->select('name')->get();
+        $buildings = DB::table('building')->select('name')->get();
+
+        $merge = $buildings->merge($offices);
+        $places = $merge->all();
+
+        return $places;
+    }
+
+    public function getCoordinates(Request $request){
+        $name = $request->input('name');
+
+        $coordinates = DB::table('building')
+            ->select(array('latitude', 'longitude', 'id'))
+            ->where('name', $name)->get();
+
+        if($coordinates == null){
+            $bldgID = DB::table('office')->select('building_num')
+                ->where('name', $name)->first();
+            
+            $coordinates = DB::table('building')
+                ->select(array('latitude', 'longitude', 'id'))
+                ->where('id', $bldgID)->get();
+
+        }
+        
+        return $coordinates;
+
+    }
  
 }

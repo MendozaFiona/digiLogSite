@@ -17,6 +17,251 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        
+        DB::table('building')->insert(
+            array(
+                'id' => 1,
+                'name' => 'Arts and Culture',
+                'latitude' => '8.48625',
+                'longitude' => '124.658417',
+            ),
+
+            array(
+                'id' => 2,
+                'name' => 'Guidance Office',
+                'latitude' => '8.486306',
+                'longitude' => '124.65825',
+            ),
+
+            array(
+                'id' => 3,
+                'name' => 'ITB - 2',
+                'latitude' => '8.486028',
+                'longitude' => '124.658333',
+            ),
+
+            array(
+                'id' => 4,
+                'name' => 'JLU Unit',
+                'latitude' => '8.485833',
+                'longitude' => '124.658111',
+            ),
+
+            array(
+                'id' => 5,
+                'name' => 'CEA Building - 1',
+                'latitude' => '8.48575',
+                'longitude' => '124.657583',
+            ),
+
+            array(
+                'id' => 6,
+                'name' => 'Auto Shop',
+                'latitude' => '8.486083',
+                'longitude' => '124.657833',
+            ),
+
+            array(
+                'id' => 7,
+                'name' => 'Electrical Shop',
+                'latitude' => '8.486278',
+                'longitude' => '124.657806',
+            ),
+
+            array(
+                'id' => 8,
+                'name' => 'Sun Cell',
+                'latitude' => '8.486472',
+                'longitude' => '124.657611',
+            ),
+
+            array(
+                'id' => 9,
+                'name' => 'ICT Building',
+                'latitude' => '8.48625',
+                'longitude' => '124.657389',
+            ),
+
+            array(
+                'id' => 10,
+                'name' => 'Administration Building',
+                'latitude' => '8.486',
+                'longitude' => '124.657278',
+            ),
+
+            array(
+                'id' => 12,
+                'name' => 'ROTC Office',
+                'latitude' => '8.486639',
+                'longitude' => '124.656222',
+            ),
+
+            array(
+                'id' => 13,
+                'name' => 'Drawing Building',
+                'latitude' => '8.486583',
+                'longitude' => '124.656611',
+            ),
+
+            array(
+                'id' => 14,
+                'name' => 'Finance Center',
+                'latitude' => '8.486306',
+                'longitude' => '124.656667',
+            ),
+
+            array(
+                'id' => 15,
+                'name' => 'Gym Lobby',
+                'latitude' => '8.486167',
+                'longitude' => '124.656417',
+                
+            ),
+
+            array(
+                'id' => 16,
+                'name' => 'Dr. Ricardo Rotoras Memorial Hall',
+                'alt' => 'Gym',
+                'latitude' => '8.485806',
+                'longitude' => '124.656667',
+            ),
+
+            array(
+                'id' => 18,
+                'name' => 'Alumni Building',
+                'latitude' => '8.485361',
+                'longitude' => '124.657222',
+            ),
+
+            array(
+                'id' => 19,
+                'name' => 'Science Centrum',
+                'latitude' => '8.485083',
+                'longitude' => '124.657167',
+                
+            ),
+
+            array(
+                'id' => 20,
+                'name' => 'Cafeteria',
+                'latitude' => '8.485194',
+                'longitude' => '124.656778',
+                
+            ),
+
+            array(
+                'id' => 21,
+                'name' => 'Guard House',
+                'latitude' => '8.484917',
+                'longitude' => '124.656611',
+            ),
+
+            array(
+                'id' => 23,
+                'name' => 'LRC Building',
+                'latitude' => '8.486611',
+                'longitude' => '124.655778',
+            ),
+
+            array(
+                'id' => 24,
+                'name' => 'Food Trades Building',
+                'latitude' => '8.486333',
+                'longitude' => '124.655361',
+            ),
+
+            array(
+                'id' => 25,
+                'name' => 'Food Innovation Center',
+                'latitude' => '8.486306',
+                 'longitude' => '124.655889',
+            ),
+
+            array(
+                'id' => 26,
+                'name' => 'Scholarship Coordinators Office',
+                'latitude' => '8.486389',
+                'longitude' => '124.656083',
+            ),
+
+            array(
+                'id' => 27,
+                'name' => 'Old Medical Building',
+                'latitude' => '8.486',
+                'longitude' => '124.655611',                
+            ),
+
+            array(
+                'id' => 28,
+                'name' => 'Science Building',
+                'latitude' => '8.485944',
+                'longitude' => '124.655889',                
+            ),
+
+            array(
+                'id' => 29,
+                'name' => 'Band Stand',
+                'latitude' => '8.485361',
+                'longitude' => '124.65575',
+            ),
+
+            array(
+                'id' => 34,
+                'name' => 'Car Care',
+                'latitude' => '8.485361',
+                'longitude' => '124.655389',
+            ),
+
+            array(
+                'id' => 35,
+                'name' => 'Education Building',
+                'latitude' => '8.485806',
+                'longitude' => '124.655278',
+            ),
+
+            array(
+                'id' => 36,
+                'name' => 'Student Center',
+                'latitude' => '8.486111',
+                'longitude' => '124.655139',
+            ),
+
+            array(
+                'id' => 37,
+                'name' => 'Civil Tech. Building',
+                'latitude' => '8.4865',
+                'longitude' => '124.654917',
+            ),
+
+            array(
+                'id' => 38,
+                'name' => 'Furniture Shop',
+                'latitude' => '8.486639',
+                'longitude' => '124.654889',
+            ),
+
+            array(
+                'id' => 41,
+                'name' => 'Science Complex',
+                'latitude' => '8.485639',
+                 'longitude' => '124.656028',
+            ),
+
+            array(
+                'id' => 42,
+                'name' => 'Engineering Complex (A)',
+                'latitude' => '8.484861',
+                'longitude' => '124.657056',
+            ),
+
+            array(
+                'id' => 43,
+                'name' => 'Engineering Complex (B)',
+                'latitude' => '8.484833',
+                'longitude' => '124.65675',
+            ),
+        );
+
         DB::table('office')->insert(array(
             array(
                 'name' => 'Admission and Scholarship Office',
@@ -339,16 +584,6 @@ class DatabaseSeeder extends Seeder
 
         $full_year = (int)date("Y");
         $office_id = $full_year * 10000;
-
-        // office
-        /*DB::table('users')->insert(
-            array(
-                'office_id' => $office_id,
-                'username' => '003001ASO',
-                'password' => Hash::make('asopassword'),
-                'role_id' => 2,
-            ),
-        );*/
 
         $date_now = date("Y/m/d");
         $time_now = date("H:i:s");

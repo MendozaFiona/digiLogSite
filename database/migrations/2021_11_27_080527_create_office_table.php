@@ -17,7 +17,7 @@ class CreateOfficeTable extends Migration
             $table->bigIncrements('id')->unsigned();
             $table->string('name');
             $table->integer('floor');
-            $table->integer('building_num');
+            $table->integer('building_num')->references('id')->on('building');
             $table->string('status');
         });
 

@@ -21,3 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('add_visitor', CampusVisitController::class)->only(['store']);
 Route::apiResource('get_offices/{building_num}', CampusVisitController::class)->only(['index']);
+Route::apiResource('get_places', CampusVisitController::class)->only(['getPlaces']);
+Route::apiResource('get_places/{name}', CampusVisitController::class)->only(['getCoordinates']);
