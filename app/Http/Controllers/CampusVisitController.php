@@ -120,7 +120,7 @@ class CampusVisitController extends Controller
 
         }
 
-        return $coordinates;
+        return $bldgID;
 
     }
  

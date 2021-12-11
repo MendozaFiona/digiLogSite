@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         
-        DB::table('building')->insert(
+        DB::table('building')->insert(array(
             array(
                 'id' => 1,
                 'name' => 'Arts and Culture',
@@ -260,6 +260,7 @@ class DatabaseSeeder extends Seeder
                 'latitude' => '8.484833',
                 'longitude' => '124.65675',
             ),
+            )
         );
 
         DB::table('office')->insert(array(
