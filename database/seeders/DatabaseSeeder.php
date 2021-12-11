@@ -605,7 +605,7 @@ class DatabaseSeeder extends Seeder
             array(
                 'name' => 'Tester A. Debugger',
                 'contact' => '09254378651',
-                'purpose' => 'OSA',
+                'destination' => 'OSA',
                 'date' => $date_now,
                 'time_in' => $time_sec,
             ),
@@ -617,7 +617,7 @@ class DatabaseSeeder extends Seeder
             array(
                 'name' => 'Another B. Programmer',
                 'contact' => '09789234172',
-                'purpose' => 'Office of Alumni Federation',
+                'destination' => 'Office of Alumni Federation',
                 'date' => $date_now,
                 'time_in' => $time_thr,
             ),
@@ -629,7 +629,7 @@ class DatabaseSeeder extends Seeder
             array(
                 'name' => 'Fiona Glezen Xi P. Mendoza',
                 'contact' => '09684365921',
-                'purpose' => 'ICT Building',
+                'destination' => 'ICT Building',
                 'date' => $date_now,
                 'time_in' => $time_thr,
             ),
