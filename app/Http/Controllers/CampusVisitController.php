@@ -116,7 +116,7 @@ class CampusVisitController extends Controller
             
             $coordinates = DB::table('building')
                 ->select(array('latitude', 'longitude', 'id'))
-                ->where('id', $bldgID)->get();
+                ->where('id', (int)$bldgID)->get();
 
         }
 
