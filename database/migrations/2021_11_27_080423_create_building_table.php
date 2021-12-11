@@ -14,7 +14,7 @@ class CreateBuildingTable extends Migration
     public function up()
     {
         Schema::create('building', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id');
             $table->string('name');
             $table->string('latitude');
             $table->string('longitude');

@@ -120,8 +120,7 @@ class DatabaseSeeder extends Seeder
 
             array(
                 'id' => 16,
-                'name' => 'Dr. Ricardo Rotoras Memorial Hall',
-                'alt' => 'Gym',
+                'name' => 'Dr. Ricardo Rotoras Memorial Hall | Gym',
                 'latitude' => '8.485806',
                 'longitude' => '124.656667',
             ),
@@ -174,7 +173,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 25,
                 'name' => 'Food Innovation Center',
                 'latitude' => '8.486306',
-                 'longitude' => '124.655889',
+                'longitude' => '124.655889',
             ),
 
             array(
@@ -244,7 +243,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 41,
                 'name' => 'Science Complex',
                 'latitude' => '8.485639',
-                 'longitude' => '124.656028',
+                'longitude' => '124.656028',
             ),
 
             array(
